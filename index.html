@@ -29,16 +29,14 @@
     </nav>
 
     <div style="display: auto;" id="inputboxprocselectype">
-
-        <button onclick="esconderProcSelecType('fisica')"> PESSOA FÍSICA</button>
-        <button onclick="esconderProcSelecType('juridica')"> PESSOA JURIDICA</button>
+        Selecione o tipo de procuração:
+        <button class="btnsubmit" onclick="esconderProcSelecType('fisica')"> PESSOA FÍSICA</button>
+        <button class="btnsubmit" onclick="esconderProcSelecType('juridica')"> PESSOA JURIDICA</button>
 
 
     </div>
 
     <div class="inputboxprocfisica" id="caixa-dos-inputs-grande">
-        <button onclick="retornaProcSelecType()">Voltar</button>
-
         <div id="encaixotei">
             <form class="rcbform">
 
@@ -60,8 +58,6 @@
                     <label for="cpf">CPF Proprietário</label>
                     <input maxlength="14" name="cpf" id="cpf" class="t2 form1" type="text" placeholder="xxx.xxx.xxx-xx">
                 </div>
-
-
                 <div class="caixainput1">
                     <label for="proc1">Procurador 1</label>
                     <input class="t1 form1" type="text" placeholder=" Procurador 1">
@@ -108,13 +104,17 @@
 
             </form>
         </div>
+        <div id="footbtn">
+            <button class="btnsubmit">
+                <ion-icon name="cloud-download-outline"></ion-icon>
+                Gerar
+            </button>
 
-        <button class="btnsubmit">
-            <ion-icon name="cloud-download-outline"></ion-icon>
-            Gerar
-
-        </button>
-
+            <button onclick="retornaProcSelecType()" class="btnsubmit">
+                <ion-icon size=large ; name="arrow-undo-outline"></ion-icon>
+                Voltar
+            </button>
+        </div>
     </div>
 
     </div>

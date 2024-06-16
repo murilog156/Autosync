@@ -201,12 +201,16 @@ body {
 
 #inputboxprocselectype {
 
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.815);
+    text-align: center;
+    font-family: "Noto Sans Display";
     flex-direction: column;
     left: 330px;
     top: 150px;
     position: absolute;
     background-color: rgba(235, 145, 28, 0.534);
-    display: none;
+    display: flex;
     height: 460px;
     width: 300px;
     align-items: center;
@@ -353,6 +357,40 @@ body {
     display: flex;
     width: 100%;
     gap: 100px;
-    background-color:
+    background-color: rgba(255, 0, 0, 0);
+
+}
+
+.btnback {
+
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    background-color: rgb(255, 130, 13);
+    border: solid;
+    border-color: var(--borderscolor);
+    border-width: 2px;
+    gap: 20px;
+    transition: all 400ms;
+}
+
+#footbtn {
+
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 0, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 120px;
+    margin-bottom: 40px;
+
+
 
 }

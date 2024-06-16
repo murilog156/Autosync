@@ -36,7 +36,13 @@ function retornaProcSelecType() {
 
 function openProcSelecType() {
 
-    document.getElementById("inputboxprocselectype").style.display = "flex"
+    if (document.getElementById("caixa-dos-inputs-grande").style.display == "none") {
+
+        document.getElementById("inputboxprocselectype").style.display = "flex"
+
+    }
+
+
 
 }
 
