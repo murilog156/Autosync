@@ -16,13 +16,7 @@ rcbform = caixa que recebe o formulário
 
     --borderscolor: rgba(255, 255, 255, 0.384);
 
-
 }
-
-
-
-
-
 
 .option2 {
 
@@ -180,7 +174,6 @@ body {
 
 .btnsubmit {
 
-    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,7 +194,7 @@ body {
 
 #inputboxprocselectype {
 
-    font-size: 30px;
+    font-size: 25px;
     color: rgba(0, 0, 0, 0.815);
     text-align: center;
     font-family: "Noto Sans Display";
@@ -210,8 +203,8 @@ body {
     top: 150px;
     position: absolute;
     background-color: rgba(235, 145, 28, 0.534);
-    display: flex;
-    height: 460px;
+    display: none;
+    height: 500px;
     width: 300px;
     align-items: center;
     justify-content: space-evenly;
@@ -219,6 +212,7 @@ body {
     border-color: var(--borderscolor);
     border-width: 2px;
     border-style: solid;
+    gap: 10px;
 
 }
 
@@ -248,7 +242,7 @@ body {
     top: 150px;
     position: absolute;
     background-color: rgba(235, 145, 28, 0.534);
-    display: flex;
+    display: none;
     height: 660px;
     width: 900px;
     align-items: center;
@@ -390,7 +384,5 @@ body {
     justify-content: space-evenly;
     gap: 120px;
     margin-bottom: 40px;
-
-
 
 }

@@ -2,6 +2,16 @@
 // EXECUTA ESSA FUNÇÃO QUANDO EU CLICO EM QUALQUER BOTÃO DE TIPOS
 // E PASSA COMO PARAMETRO QUAL O BOTÃO QUE EU CLIQUEI
 // PARA EU PODER DECIDIR O QUE FAÇO CONFORME O TIPO QUE RECEBI
+
+// Operador OU -> || 
+// Operador AND -> &&
+// Operador maior que ->  >
+// Operador menor que ->  <
+// Operador menor ou igual que ->  <=
+// Operador maior ou igual que ->  >=
+
+let menuAbertoAtual = null;
+
 function esconderProcSelecType(tipo) {
 
     //ESCONDE A CAIXA DE POP UP
@@ -34,20 +44,38 @@ function retornaProcSelecType() {
 
 }
 
+function fecharTodosMenus() {
+    document.getElementById("inputboxprocselectype").style.display = "none";
+    document.getElementById("caixa-dos-inputs-grande").style.display = "none";
+}
+
 function openProcSelecType() {
-
-    if (document.getElementById("caixa-dos-inputs-grande").style.display == "none") {
-
-        document.getElementById("inputboxprocselectype").style.display = "flex"
-
-    }
-
-
-
+    fecharTodosMenus();
+    document.getElementById("inputboxprocselectype").style.display = "flex"
+    menuAbertoAtual = "Gerador de procuração";
 }
 
 function openRecibo() {
-
-    document.getElementById("inputboxprocselectype").style.display = "none"
-
+    // Fechar todos os menus
+    fecharTodosMenus();
+    menuAbertoAtual = "Recibo Simples";
+    // Abrir o recibo
+    // Como abre?
+    // document.getElementById("iddorecibo").style.display = "flex"
 }
+
+
+function openContratos() {
+    // Fechar todos os menus
+    fecharTodosMenus();
+    menuAbertoAtual = "Contratos";
+}
+
+
+function openConsultaCPF() {
+    // Fechar todos os menus
+    fecharTodosMenus();
+    menuAbertoAtual = "Consulta CPF";
+    // 
+}
+

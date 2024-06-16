@@ -28,11 +28,11 @@
         <button class="btnside">Consulta CPF</button>
     </nav>
 
-    <div style="display: auto;" id="inputboxprocselectype">
+    <div id="inputboxprocselectype">
         Selecione o tipo de procuração:
-        <button class="btnsubmit" onclick="esconderProcSelecType('fisica')"> PESSOA FÍSICA</button>
-        <button class="btnsubmit" onclick="esconderProcSelecType('juridica')"> PESSOA JURIDICA</button>
-
+        <button class="btnsubmit" onclick="esconderProcSelecType('fisica')"> Pessoa física</button>
+        <button class="btnsubmit" onclick="esconderProcSelecType('juridica')"> Pessoa jurídica</button>
+        <button class="btnsubmit"> Procuração avançada</button>
 
     </div>
 
@@ -105,7 +105,7 @@
             </form>
         </div>
         <div id="footbtn">
-            <button class="btnsubmit">
+            <button onclick="enviarMensagemWPP()" class="btnsubmit">
                 <ion-icon name="cloud-download-outline"></ion-icon>
                 Gerar
             </button>
