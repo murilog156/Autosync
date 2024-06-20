@@ -131,8 +131,8 @@ body {
 .btnside {
 
     border-radius: 8px;
-    color: rgba(0, 0, 0, 0.815);
-    background-color: rgba(255, 148, 72, 0.774);
+    color: rgba(255, 255, 255, 0.813);
+    background-color: rgba(255, 140, 58, 0.972);
     font-family: "Noto Sans Display";
     font-size: 22px;
     border: none;
@@ -149,8 +149,8 @@ body {
 .btnside:hover {
 
     transition: all;
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 145, 0);
+    background-color: rgba(255, 255, 255, 0.912);
+    color: rgb(0, 0, 0);
     transition-duration: 300ms;
     border-style: none none solid none;
     border-color: rgba(0, 0, 0, 0.171);
