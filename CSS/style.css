@@ -14,7 +14,23 @@ rcbform = caixa que recebe o formulário
 
 :root {
 
-    --borderscolor: rgba(255, 255, 255, 0.384);
+    --borderscolor: rgba(43, 43, 43, 0.082);
+
+}
+
+
+#logo1 {
+
+    margin-right: 50px;
+    transition: 300ms;
+}
+
+#logo1:hover {
+
+    margin-right: 50px;
+    cursor: pointer;
+    margin-right: 60px;
+
 
 }
 
@@ -92,37 +108,44 @@ label {
 
 body {
 
-    background-image: url(../media/bck.jpg);
+    background-image: url(/bck.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 
+
+
 .topbar {
 
-    background-color: rgba(255, 148, 72, 0.637);
-    width: 100%;
-    height: 120px;
-    border: var(--borderscolor);
 
+    background-color: rgba(235, 140, 72, 0.781);
+    width: 100%;
+    height: 100px;
+    border: var(--borderscolor);
     border-style: none none solid none;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+
 }
 
 .sidebar {
 
     display: flex;
     flex-direction: column;
-    background-color: rgba(237, 128, 4, 0.479);
+    background-color: rgba(250, 133, 0, 0.555);
     position: absolute;
     width: 10%;
     height: auto;
     bottom: 0;
-    top: 120px;
+    top: 93px;
     margin-left: 20px;
     align-items: center;
     border-style: none solid none none;
-    border-color: rgba(185, 185, 185, 0.658);
+    border-color: rgba(185, 185, 185, 0);
     border-width: 2px;
     padding-top: 10px;
     z-index: -1;
@@ -132,7 +155,7 @@ body {
 
     border-radius: 8px;
     color: rgba(255, 255, 255, 0.813);
-    background-color: rgba(255, 140, 58, 0.972);
+    background-color: rgba(255, 140, 58, 0.742);
     font-family: "Noto Sans Display";
     font-size: 22px;
     border: none;
@@ -149,30 +172,37 @@ body {
 .btnside:hover {
 
     transition: all;
-    background-color: rgba(255, 255, 255, 0.912);
+    background-color: rgb(238, 238, 238);
     color: rgb(0, 0, 0);
     transition-duration: 300ms;
     border-style: none none solid none;
     border-color: rgba(0, 0, 0, 0.171);
     border-width: 1px;
+    width: 110%;
     border-radius: 10px;
-    width: 102%;
 
 }
 
 .btnsubmit:hover {
 
     background-color: rgb(255, 255, 255);
-    color: rgb(255, 145, 0);
+    color: rgba(0, 0, 0, 0.856);
     border-style: solid;
     border-color: rgb(255, 145, 0);
     border-radius: 10px;
 
-
-
 }
 
-.btnsubmit {
+.btnSelectType:hover {
+
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.856);
+    border-style: solid;
+    border-color: rgb(255, 145, 0);
+    border-radius: 10px;
+}
+
+.btnSelectType {
 
     display: flex;
     align-items: center;
@@ -180,8 +210,8 @@ body {
     height: 100px;
     width: 200px;
     border-radius: 8px;
-    color: rgba(0, 0, 0, 0.815);
-    background-color: rgb(255, 130, 13);
+    color: rgb(255, 255, 255);
+    background-color: rgba(130, 201, 64, 0.849);
     font-family: "Noto Sans Display";
     font-size: 30px;
     border: solid;
@@ -192,29 +222,56 @@ body {
 
 }
 
-#inputboxprocselectype {
 
+.btnsubmit {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.815);
+    background-color: rgb(205, 117, 18);
+    font-family: "Noto Sans Display";
+    border: solid;
+    border-color: var(--borderscolor);
+    border-width: 2px;
+    gap: 20px;
+    transition: all 400ms;
+    font-size: 22px;
+    margin-top: 10px;
+    width: 95%;
+    height: 80px;
+
+
+}
+
+#procSelectType {
+
+    display: flex;
     font-size: 25px;
-    color: rgba(0, 0, 0, 0.815);
+    color: rgba(224, 224, 224, 0.966);
     text-align: center;
     font-family: "Noto Sans Display";
     flex-direction: column;
-    left: 330px;
+    left: 250px;
     top: 150px;
     position: absolute;
-    background-color: rgba(235, 145, 28, 0.534);
-    display: none;
-    height: 500px;
-    width: 300px;
+    background-color: rgba(235, 145, 28, 0.589);
+    height: 370px;
+    width: 200px;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
     border-color: var(--borderscolor);
     border-width: 2px;
     border-style: solid;
-    gap: 10px;
+
 
 }
+
+
+
+
 
 .inputboxprocfisica {
 

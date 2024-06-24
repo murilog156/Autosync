@@ -15,7 +15,7 @@ let menuAbertoAtual = null;
 function esconderProcSelecType(tipo) {
 
     //ESCONDE A CAIXA DE POP UP
-    document.getElementById("inputboxprocselectype").style.display = "none"
+    document.getElementById("procSelectType").style.display = "none"
     // MOSTRA A CAIXA DOS INPUTS DO FORMULARIO
     document.getElementById("caixa-dos-inputs-grande").style.display = "flex"
 
@@ -23,8 +23,8 @@ function esconderProcSelecType(tipo) {
     // SE O BOTÃO QUE FOI CLICADO FOI O BOTÃO DE PESSOA FISICA
     if (tipo == "fisica") {
         // EXECUTA ISSO ABAIXO
-        document.getElementById("caixa-dos-inputs-juridicos").style.display = "none"
-        document.getElementById("caixa-dos-inputs-fisicos").style.display = "flex"
+        document.getElementById("caixa-dos-inputs-juridicos").style.display = "none" // fecha input juridicos
+        document.getElementById("caixa-dos-inputs-fisicos").style.display = "flex" // abre inputs físicos
 
 
     }
@@ -40,42 +40,22 @@ function esconderProcSelecType(tipo) {
 function retornaProcSelecType() {
 
     document.getElementById("caixa-dos-inputs-grande").style.display = "none"
-    document.getElementById("inputboxprocselectype").style.display = "flex"
+    document.getElementById("procSelectType").style.display = "flex"
 
 }
-
 function fecharTodosMenus() {
-    document.getElementById("inputboxprocselectype").style.display = "none";
+    document.getElementById("procSelectType").style.display = "none";
     document.getElementById("caixa-dos-inputs-grande").style.display = "none";
 }
-
 function openProcSelecType() {
     fecharTodosMenus();
-    document.getElementById("inputboxprocselectype").style.display = "flex"
-    menuAbertoAtual = "Gerador de procuração";
+    document.getElementById("procSelectType").style.display = "flex"
+    menuAbertoAtual = "Gerador-de-procuração";
 }
-
 function openRecibo() {
-    // Fechar todos os menus
+
     fecharTodosMenus();
-    menuAbertoAtual = "Recibo Simples";
-    // Abrir o recibo
-    // Como abre?
-    // document.getElementById("iddorecibo").style.display = "flex"
+    menuAbertoAtual = "Recibo";
+
+
 }
-
-
-function openContratos() {
-    // Fechar todos os menus
-    fecharTodosMenus();
-    menuAbertoAtual = "Contratos";
-}
-
-
-function openConsultaCPF() {
-    // Fechar todos os menus
-    fecharTodosMenus();
-    menuAbertoAtual = "Consulta CPF";
-    // 
-}
-
