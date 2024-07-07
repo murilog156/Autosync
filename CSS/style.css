@@ -11,7 +11,6 @@ rcbform = caixa que recebe o formulário
 
 
 
-
 :root {
 
     --borderscolor: rgba(43, 43, 43, 0.082);
@@ -151,7 +150,7 @@ body {
     width: 10%;
     height: auto;
     bottom: 0;
-    top: 93px;
+    top: 103px;
     margin-left: 20px;
     align-items: center;
     border-style: none solid none none;
@@ -159,6 +158,55 @@ body {
     border-width: 2px;
     padding-top: 10px;
     z-index: -1;
+}
+
+.btnsubback {
+
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.813);
+    background-color: rgba(255, 140, 58, 0.742);
+    font-family: "Noto Sans Display";
+    font-size: 25px;
+    border: none;
+    margin-top: 10px;
+    width: 40%;
+    height: 80px;
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#separador1 {
+
+    display: flex;
+    width:50%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#separador2 {
+
+    display: flex;
+    width:50%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+
+.btnsubback:hover {
+
+    transition: all;
+    background-color: rgb(238, 238, 238);
+    color: rgb(0, 0, 0);
+    transition-duration: 300ms;
+    border-style: none none solid none;
+    border-color: rgba(0, 0, 0, 0.171);
+    border-width: 1px;
+    border-radius: 10px;
 }
 
 .btnside {
@@ -257,7 +305,7 @@ body {
 
 #procSelectType {
 
-    display: flex;
+    display: none;
     font-size: 25px;
     color: rgba(224, 224, 224, 0.966);
     text-align: center;
@@ -290,7 +338,7 @@ body {
     top: 150px;
     position: absolute;
     background-color: rgba(235, 145, 28, 0.534);
-    display: none;
+    display: flex;
     height: 660px;
     width: 900px;
     align-items: center;
@@ -442,15 +490,17 @@ body {
 
 #footbtn {
 
+
+
     height: 100%;
-    width: 100%;
+    width: 90%;
     background-color: rgba(255, 255, 0, 0);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    gap: 120px;
-    margin-bottom: 40px;
+    gap: 45px;
+    margin-bottom: 30px;
 
 }
 
