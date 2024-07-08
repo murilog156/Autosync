@@ -18,6 +18,21 @@ recibo-simples
 
 */
 
+function aaa() {
+
+    document.getElementById('procPfInput1').value = "AAAAAAAAAAAAAA"
+    document.getElementById('procPfInput2').value = "00000000000000"
+    document.getElementById('procPfInput3').value = "AAAAAAAAAAAAAA"
+    document.getElementById('procPfInput4').value = "00000000000000"
+    document.getElementById('procPfInput5').value = "AAAAAAAAAAAAAA"
+    document.getElementById('procPfInput6').value = "AAAAAAAAAAAAAA"
+    document.getElementById('placa').value = "AAAAAAAAAAAAAA"
+    document.getElementById('rnvvei').value = "AAAAAAAAAAAAAA"
+    document.getElementById('marmodvei').value = "AAAAAAAAAAAAAA"
+    document.getElementById('chassi1').value = "AAAAAAAAAAAAAA"
+    document.getElementById('anoveiculo').value = "AAAAAAAAAAAAAA"
+    document.getElementById('corveiculo').value = "AAAAAAAAAAAAAA"
+}
 
 let menuAbertoAtual = null;
 const formPrincipal = document.getElementById("encaixotei")
@@ -47,7 +62,7 @@ function esconderProcSelecType(tipoproc) {
         cxInjuridico.style.display = "none" // fecha input juridicos
         cxInfisico.style.display = "flex" // abre inputs físicos
         menuAbertoAtual = "gerador-procuracao-fisica"
-        console.log(menuAbertoAtual);
+
 
     }
 
@@ -92,7 +107,7 @@ function openRecibo() {
 }
 function gerarProcPf() {
 
-    const DadosProcPF = {
+    const DadosProcPf = {
 
         proprietario: document.getElementById('procPfInput1').value,
         proprietarioCpf: document.getElementById('procPfInput2').value,
@@ -114,7 +129,7 @@ function gerarProcPf() {
 
 
     }
-
+    console.log(DadosProcPf)
 }
 function gerarProcPj() {
 
@@ -134,9 +149,13 @@ function gerarProcPj() {
         cor: document.getElementById('corveiculo').value
     };
 
+    window.open(`./proc.html?razaoSocial=${DadosProcPj.razaoSocial}&cnpj=${DadosProcPj.cnpj}&procurador1=${DadosProcPj.procurador1}&
+        cpfproc1=${DadosProcPj.cpfproc1}&procurador2=${DadosProcPj.procurador2}&cpfproc2=${DadosProcPj.cpfproc2}&placa=${DadosProcPj.placa}&renavam=${DadosProcPj.renavam}&marcamodelo
+        =${DadosProcPj.marcamodelo}&chassi=${DadosProcPj.chassi}&anoveiculo=${DadosProcPj.anoveiculo}&cor=${DadosProcPj.cor}`)
+
     if (menuAbertoAtual == "gerador-procuracao-juridica") {
 
-        console.log(DadosProcPj);
+
 
     }
 
@@ -146,11 +165,20 @@ function gerarProc(evento1) {
     if (evento1 != null) {
 
         evento1.preventDefault()
+
+        if (menuAbertoAtual == "gerador-procuracao-fisica") {
+            gerarProcPf()
+        } else if (menuAbertoAtual == "gerador-procuracao-juridica") {
+            gerarProcPj()
+        }
+
     }
 
-    if (menuAbertoAtual == "gerador-procuracao-fisica") {
-        gerarProcPf()
-    } else if (menuAbertoAtual == "gerador-procuracao-juridica") {
-        gerarProcPj()
-    }
 }
+
+
+
+
+
+
+

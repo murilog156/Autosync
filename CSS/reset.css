@@ -153,3 +153,17 @@ button {
 	font-family: "Noto Sans Display";
 
 }
+
+@keyframes pisca {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#procSelectType {
+	animation: pisca 400ms;
+}
