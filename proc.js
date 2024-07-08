@@ -22,4 +22,4 @@ document.getElementById("nome-proprietario").innerHTML = DadosProcPj.razaoSocial
 
 console.log(DadosProcPj)
 
-// window.print()
+window.print()
