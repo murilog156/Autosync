@@ -32,4 +32,4 @@ document.getElementById("cor").innerHTML = DadosProcPf.cor
 
 console.log(DadosProcPf)
 
-//window.print()
+window.print()
