@@ -23,7 +23,7 @@
     #box-proc {
         background-color: green;
         display: flex;
-        height: 1300px;
+        height: 1600px;
         width: 900px;
         flex-direction: column;
         font-family: "Poppins", sans-serif;
@@ -55,32 +55,43 @@
 
     #veiculo-id {
         background-color: brown;
+        height: 190px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 100px;
-        margin-top: 15px;
+        justify-content: center;
         font-size: 22px;
         font-weight: 500;
-        gap: 30px;
+
     }
 
 
     #veiculo-id1 {
-        width: 30%;
-        margin-left: 15%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
         background-color: rgb(121, 121, 252);
+
     }
 
     #veiculo-id2 {
-        margin-left: 20%;
+
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
         background-color: orange;
 
     }
 
     #poderes-texto {
 
-        margin-top: 20px;
+
         font-size: 20px;
         background-color: aquamarine;
         display: flex;
@@ -105,7 +116,7 @@
         justify-content: center;
     }
 
-    #campos-de-assinatura {
+    #campo-de-assinatura {
 
         background-color: brown;
         display: flex;
@@ -113,7 +124,7 @@
         align-items: center;
         justify-content: center;
         width: 900px;
-        height: 200px;
+        height: 100px;
         gap: 10px;
 
 
@@ -135,6 +146,15 @@
         align-items: center;
         justify-content: center;
     }
+
+    #cxprop {
+        display: flex;
+        flex-direction: row;
+        background-color: aqua;
+        width: 900px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 </style>
 
 <body>
@@ -144,10 +164,15 @@
 
 
         <div id="pessoas-id">
-            Pelo presente instrumento particular de procuração, eu: <div id="nome-proprietario"
-                class="fonte-info-saida"></div>, CPF:<div id="cpf-prop" class="fonte-info-saida"></div>
-            nomeio e constituo meu bastante procurador:
-            <div id="nome-proc-1" class="fonte-info-saida"></div>, CPF:<div id="cpf-proc-1" class="fonte-info-saida">
+            <div>Pelo presente instrumento particular de procuração, eu:</div>
+            <div id="cxprop">
+                <div id="nome-proprietario" class="fonte-info-saida"></div>
+                CPF:<div id="cpf-prop" class="fonte-info-saida"></div>
+            </div>
+
+            <div>nomeio e constituo meu bastante procurador:</div>
+            <div id="nome-proc-1" class="fonte-info-saida"></div>
+            <div id="cpf-proc-1" class="fonte-info-saida">
             </div>
             A fim de vender ou transferir para si próprio, locar, comprar e permutar o veículo com as seguintes
             características:
@@ -208,7 +233,7 @@
 
         <div id="data-proc">Data</div>
 
-        <div id="campos-de-assinatura">
+        <div id="campo-de-assinatura">
 
 
             <div id="linha-de-assinatura">
