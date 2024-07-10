@@ -20,18 +20,18 @@ recibo-simples
 
 function aaa() {
 
-    document.getElementById('procPfInput1').value = "AAAAAAAAAAAAAA"
-    document.getElementById('procPfInput2').value = "00000000000000"
-    document.getElementById('procPfInput3').value = "AAAAAAAAAAAAAA"
-    document.getElementById('procPfInput4').value = "00000000000000"
+    document.getElementById('procPfInput1').value = "MURILO GRADEL SOUZA BRITO"
+    document.getElementById('procPfInput2').value = "038.882.260-07"
+    document.getElementById('procPfInput3').value = "MARIO DUARTE SOUZA PEREIRA PINTO"
+    document.getElementById('procPfInput4').value = "397.001.626-64"
     document.getElementById('procPfInput5').value = "AAAAAAAAAAAAAA"
     document.getElementById('procPfInput6').value = "AAAAAAAAAAAAAA"
-    document.getElementById('placa').value = "AAAAAAAAAAAAAA"
-    document.getElementById('rnvvei').value = "AAAAAAAAAAAAAA"
-    document.getElementById('marmodvei').value = "AAAAAAAAAAAAAA"
-    document.getElementById('chassi1').value = "AAAAAAAAAAAAAA"
-    document.getElementById('anoveiculo').value = "AAAAAAAAAAAAAA"
-    document.getElementById('corveiculo').value = "AAAAAAAAAAAAAA"
+    document.getElementById('placa').value = "JTV-6591"
+    document.getElementById('rnvvei').value = "12345678935"
+    document.getElementById('marmodvei').value = "Ferrari 456 GT"
+    document.getElementById('chassi1').value = "9BGKC9103292B3"
+    document.getElementById('anoveiculo').value = "2010 - 2010"
+    document.getElementById('corveiculo').value = "VERMELHO"
 }
 
 let menuAbertoAtual = null;
@@ -62,7 +62,7 @@ function esconderProcSelecType(tipoproc) {
         cxInjuridico.style.display = "none" // fecha input juridicos
         cxInfisico.style.display = "flex" // abre inputs físicos
         menuAbertoAtual = "gerador-procuracao-fisica"
-
+        console.log(menuAbertoAtual);
 
     }
 
@@ -122,6 +122,9 @@ function gerarProcPf() {
         anoveiculo: document.getElementById('anoveiculo').value,
         cor: document.getElementById('corveiculo').value
     };
+
+    window.open(`./proc.html?proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&procurador2=${DadosProcPf.procurador2}&cpfproc2=${DadosProcPf.cpfproc2}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
+        &marcamodelo=${DadosProcPf.marcamodelo}&chassi=${DadosProcPf.chassi}&anoveiculo=${DadosProcPf.anoveiculo}&cor=${DadosProcPf.cor}`)
 
     if (menuAbertoAtual == "gerador-procuracao-fisica") {
 

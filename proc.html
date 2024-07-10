@@ -67,7 +67,7 @@
 
 
     #veiculo-id1 {
-
+        width: 30%;
         margin-left: 15%;
         background-color: rgb(121, 121, 252);
     }
@@ -88,10 +88,10 @@
         justify-content: center;
     }
 
-    .font-pessoas-saida {
+    .fonte-info-saida {
 
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 400;
 
     }
 
@@ -145,23 +145,24 @@
 
         <div id="pessoas-id">
             Pelo presente instrumento particular de procuração, eu: <div id="nome-proprietario"
-                class="font-pessoas-saida"></div>, CPF:<div id="cpf-prop"></div>
+                class="fonte-info-saida"></div>, CPF:<div id="cpf-prop" class="fonte-info-saida"></div>
             nomeio e constituo meu bastante procurador:
-            <div id="nome-proc-1"></div>, CPF:<div id="cpf-proc-1"></div>
+            <div id="nome-proc-1" class="fonte-info-saida"></div>, CPF:<div id="cpf-proc-1" class="fonte-info-saida">
+            </div>
             A fim de vender ou transferir para si próprio, locar, comprar e permutar o veículo com as seguintes
             características:
         </div>
 
         <div id="veiculo-id">
             <div id="veiculo-id1">
-                Marca/Modelo:<div id="marca-mod"></div>
-                Placa:<div id="placa"></div>
-                Renavam:<div id="renavam"></div>
+                Marca/Modelo:<div id="marca-mod" class="fonte-info-saida"></div>
+                Placa:<div id="placa" class="fonte-info-saida"></div>
+                Renavam:<div id="renavam" class="fonte-info-saida"></div>
             </div>
             <div id="veiculo-id2">
-                Chassi:<div id="chassi"></div>
-                Ano/Modelo:<div id="anofab-anomod"></div>
-                Cor do veículo:<div id="cor"></div>
+                Chassi:<div id="chassi" class="fonte-info-saida"></div>
+                Ano/Modelo:<div id="anofab-anomod" class="fonte-info-saida"></div>
+                Cor do veículo:<div id="cor" class="fonte-info-saida"></div>
             </div>
         </div>
 
@@ -214,8 +215,10 @@
                 _____________________________________________________
 
             </div>
+
             <div id="campo-assinatura">
-                JOSNEL APARECIDO DO NORTE
+
+                <div id="nome-proprietario-ass" class="fonte-info-saida"></div>
 
             </div>
 
