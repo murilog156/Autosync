@@ -32,7 +32,7 @@
     #title {
 
 
-        height: 100px;
+        height: 60px;
         display: flex;
         background-color: rgb(236, 255, 127);
         align-items: center;
@@ -109,7 +109,7 @@
     #data-proc {
 
         font-size: 22px;
-        background-color: blueviolet;
+        background-color: rgb(56, 245, 31);
         height: 50px;
         display: flex;
         align-items: center;
@@ -118,11 +118,12 @@
 
     #campo-de-assinatura {
 
+        margin-top: 20px;
         background-color: brown;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
         width: 900px;
         height: 100px;
         gap: 10px;
@@ -130,7 +131,7 @@
 
     }
 
-    #linha-de-assinatura {
+    #linha {
 
         font-family: "Roboto", sans-serif;
 
@@ -153,7 +154,59 @@
         background-color: aqua;
         width: 900px;
         align-items: center;
-        justify-content: space-evenly;
+
+    }
+
+    #cxproc {
+
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(226, 213, 33);
+        align-items: center;
+        justify-content: center;
+        width: 900px;
+
+
+    }
+
+    #nome-proc-1 {}
+
+    #cpf-proc-1 {}
+
+    #cpf-fixed {
+
+        margin-left: 5px;
+        background-color: red;
+    }
+
+    #linha-data {
+
+        display: flex;
+        margin-left: 20px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    #nome-proprietario {
+
+        margin-left: 100px;
+        width: 50%;
+        height: 30px;
+        background-color: rgb(73, 226, 43);
+    }
+
+    #cpf-fixed {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 30px;
+        background-color: rgb(233, 236, 26);
+    }
+
+    #cpf-prop {
+        width: 200px;
+        height: 30px;
+        background-color: rgb(236, 66, 66);
     }
 </style>
 
@@ -165,14 +218,18 @@
 
         <div id="pessoas-id">
             <div>Pelo presente instrumento particular de procuração, eu:</div>
+
             <div id="cxprop">
                 <div id="nome-proprietario" class="fonte-info-saida"></div>
-                CPF:<div id="cpf-prop" class="fonte-info-saida"></div>
+                <div id="cpf-fixed">CPF:</div>
+                <div id="cpf-prop" class="fonte-info-saida"></div>
             </div>
 
             <div>nomeio e constituo meu bastante procurador:</div>
-            <div id="nome-proc-1" class="fonte-info-saida"></div>
-            <div id="cpf-proc-1" class="fonte-info-saida">
+            <div id="cxproc">
+                <div id="nome-proc-1" class="fonte-info-saida"></div>
+                <div id="cpf-proc-1" class="fonte-info-saida">
+                </div>
             </div>
             A fim de vender ou transferir para si próprio, locar, comprar e permutar o veículo com as seguintes
             características:
@@ -231,12 +288,16 @@
             descrito e caracterizado, até a data da outorga do presente mandato.
         </div>
 
-        <div id="data-proc">Data</div>
+        <div id="data-proc">Local e data:
+
+            <div id="linha-data">____________________, ______/____________/______.</div>
+
+        </div>
 
         <div id="campo-de-assinatura">
 
 
-            <div id="linha-de-assinatura">
+            <div id="linha">
                 _____________________________________________________
 
             </div>
