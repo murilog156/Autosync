@@ -20,6 +20,8 @@ document.getElementById("nome-proprietario-ass").innerHTML = DadosProcPf.proprie
 document.getElementById("cpf-prop").innerHTML = DadosProcPf.cpf
 document.getElementById("nome-proc-1").innerHTML = DadosProcPf.procurador1
 document.getElementById("cpf-proc-1").innerHTML = DadosProcPf.cpfproc1
+document.getElementById("nome-proc-2").innerHTML = DadosProcPf.procurador2
+document.getElementById("cpf-proc-2").innerHTML = DadosProcPf.cpfproc2
 document.getElementById("marca-mod").innerHTML = DadosProcPf.marcamodelo
 document.getElementById("placa").innerHTML = DadosProcPf.placa
 document.getElementById("renavam").innerHTML = DadosProcPf.renavam
@@ -29,4 +31,4 @@ document.getElementById("cor").innerHTML = DadosProcPf.cor
 
 console.log(DadosProcPf)
 
-window.print()
+//window.print()
