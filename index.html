@@ -50,26 +50,27 @@
                 <div class="caixainput1" id="caixa-dos-inputs-juridicos">
 
                     <label id="teste30" for="prop">Razão Social</label>
-                    <input name="razaoSocial" id="procPjInput1" class="t1 form1" type="text"
-                        placeholder=" Proprietário Razão social">
+                    <input style="text-transform: uppercase;" name="razaoSocial" id="procPjInput1" class="t1 form1"
+                        type="text" placeholder=" Proprietário Razão social">
 
                     <label for="cnpj">CNPJ</label>
-                    <input maxlength="18" name="cnpj" id="procPjInput2" class="t2 form1" type="text"
-                        placeholder="xx.xxx.xxx/xxxx-xx">
+                    <input style="text-transform: uppercase;" maxlength="18" name="cnpj" id="procPjInput2"
+                        class="t2 form1" type="text" placeholder="xx.xxx.xxx/xxxx-xx">
                 </div>
                 <div class="caixainput1" id="caixa-dos-inputs-fisicos">
 
                     <label for="prop">Proprietário</label>
-                    <input required name="Proprietario" id="procPfInput1" class="t1 form1" type="text"
-                        placeholder=" Proprietário">
+                    <input style="text-transform: uppercase;" required name="Proprietario" id="procPfInput1"
+                        class="t1 form1" type="text" placeholder=" Proprietário">
 
                     <label for="cpf">CPF Proprietário</label>
-                    <input required id="procPfInput2" minlength="14" maxlength="14" name="cpf" id="cpf" class="t2 form1"
+                    <input required id="procPfInput2" minlength="11" maxlength="14" name="cpf" id="cpf" class="t2 form1"
                         type="text" placeholder="xxx.xxx.xxx-xx">
                 </div>
                 <div class="caixainput1">
                     <label for="proc1">Procurador 1</label>
-                    <input required id="procPfInput3" class="t1 form1" type="text" placeholder=" Procurador 1">
+                    <input style="text-transform: uppercase;" required id="procPfInput3" class="t1 form1" type="text"
+                        placeholder=" Procurador 1">
 
                     <label for="cpf1">CPF</label>
                     <input required id="procPfInput4" maxlength="14" name="cpf1" class="t2 form1" type="text"
@@ -78,7 +79,8 @@
                 <div class="caixainput1">
 
                     <label for="proc2">Procurador 2</label>
-                    <input id="procPfInput5" class="t1 form1" type="text" placeholder=" Procurador 2">
+                    <input style="text-transform: uppercase;" id="procPfInput5" class="t1 form1" type="text"
+                        placeholder=" Procurador 2">
 
                     <label for="cpf2">CPF</label>
                     <input maxlength="14" name="cpf2" id="procPfInput6" class="t2 form1" type="text"
@@ -89,30 +91,32 @@
 
                 <div class="caixainput2">
                     <label for="placa">Placa</label>
-                    <input required id="placa" name="placa" class="t3 form2" type="text" placeholder=" xxx-xxxx">
+                    <input required style="text-transform: uppercase;" minlength="7" maxlength="7" id="placa"
+                        name="placa" class="t3 form2" type="text" placeholder=" XYZ1B34">
 
                     <label for="rnvvei">Renavam</label>
-                    <input required maxlength="11" name="rnvvei" id="rnvvei" class="t3 form2" type="text"
+                    <input required minlength="9" maxlength="11" name="rnvvei" id="rnvvei" class="t3 form2" type="text"
                         placeholder="123456789">
 
                     <label for="modvei">Marca / Modelo</label>
-                    <input required id="marmodvei" class="t3 form2" type="text" placeholder=" Marca Mod">
+                    <input required maxlength="24" id="marmodvei" class="t3 form2" type="text" placeholder=" Marca Mod">
 
                     <label for="cpf1">Chassi</label>
-                    <input required maxlength="14" name="cpf1" id="chassi1" class="t3 form2" type="text"
-                        placeholder="EX: 9BGK348V0JF153530">
+                    <input required style="text-transform: uppercase;" minlength="10" maxlength="17" name="cpf1"
+                        id="chassi1" class="t3 form2" type="text" placeholder="EX: 9BGK348V0JF153530">
 
                     <label for="Anovei">Ano fab / Ano mod</label>
-                    <input required id="anoveiculo" class="t3 form2" type="text" placeholder=" Ano fab / Ano mod"
-                        required>
+                    <input required minlength="8" maxlength="10" id="anoveiculo" class="t3 form2" type="text"
+                        placeholder=" Ano fab / Ano mod" required>
 
                     <label for="cor">Cor</label>
-                    <input required name="cor" id="corveiculo" class="t3 form2" type="text" placeholder="Ex: Verde"
-                        required>
+                    <input required style="text-transform: uppercase;" maxlength="12" name="cor" id="corveiculo"
+                        class="t3 form2" type="text" placeholder="Ex: Branco" required>
                 </div>
             </div>
             <div id="footbtn">
-
+                <button type="button" onclick="aaa()">PREENCHER</button>
+                <button type="button" onclick="verificaProcuradores()">TESTAR PROCURADOR</button>
                 <button type="button" onclick="retornaProcSelecType()" class="btnsubback">
                     <div id="separador2">
                         <ion-icon size=large ; name="arrow-undo-outline"></ion-icon>
@@ -126,10 +130,13 @@
                         Gerar
                     </div>
                 </button>
-                <button type="button" onclick="aaa()">AQUI</button>
+
             </div>
+
         </form>
+
     </div>
+
     <!------------------------------------------------------------------------------------------------->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

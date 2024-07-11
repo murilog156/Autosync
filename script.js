@@ -35,6 +35,8 @@ function aaa() {
 }
 
 let menuAbertoAtual = null;
+
+
 const formPrincipal = document.getElementById("encaixotei")
 const cxInfisico = document.getElementById("caixa-dos-inputs-fisicos")
 const cxInjuridico = document.getElementById("caixa-dos-inputs-juridicos")
@@ -113,6 +115,27 @@ function gerarProcPf() {
         proprietarioCpf: document.getElementById('procPfInput2').value,
         procurador1: document.getElementById('procPfInput3').value,
         cpfproc1: document.getElementById('procPfInput4').value,
+        placa: document.getElementById('placa').value,
+        renavam: document.getElementById('rnvvei').value,
+        marcamodelo: document.getElementById('marmodvei').value,
+        chassi: document.getElementById('chassi1').value,
+        anoveiculo: document.getElementById('anoveiculo').value,
+        cor: document.getElementById('corveiculo').value
+    };
+
+    window.open(`./proc.html?proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
+        &marcamodelo=${DadosProcPf.marcamodelo}&chassi=${DadosProcPf.chassi}&anoveiculo=${DadosProcPf.anoveiculo}&cor=${DadosProcPf.cor}`)
+
+
+}
+function gerarProcPf2() {
+
+    const DadosProcPf = {
+
+        proprietario: document.getElementById('procPfInput1').value,
+        proprietarioCpf: document.getElementById('procPfInput2').value,
+        procurador1: document.getElementById('procPfInput3').value,
+        cpfproc1: document.getElementById('procPfInput4').value,
         procurador2: document.getElementById('procPfInput5').value,
         cpfproc2: document.getElementById('procPfInput6').value,
         placa: document.getElementById('placa').value,
@@ -123,16 +146,10 @@ function gerarProcPf() {
         cor: document.getElementById('corveiculo').value
     };
 
-    window.open(`./proc.html?proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&procurador2=${DadosProcPf.procurador2}&cpfproc2=${DadosProcPf.cpfproc2}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
+    window.open(`./proc2.html?proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&procurador2=${DadosProcPf.procurador2}&cpfproc2=${DadosProcPf.cpfproc2}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
         &marcamodelo=${DadosProcPf.marcamodelo}&chassi=${DadosProcPf.chassi}&anoveiculo=${DadosProcPf.anoveiculo}&cor=${DadosProcPf.cor}`)
 
-    if (menuAbertoAtual == "gerador-procuracao-fisica") {
 
-
-
-
-    }
-    console.log(DadosProcPf)
 }
 function gerarProcPj() {
 
@@ -165,15 +182,26 @@ function gerarProcPj() {
 }
 function gerarProc(evento1) {
 
+    const procurador2 = document.getElementById('procPfInput5').value;
+    const cpfproc2 = document.getElementById('procPfInput6').value;
+    let temValor = procurador2 !== '' && cpfproc2 !== '';
+
+
     if (evento1 != null) {
 
         evento1.preventDefault()
 
-        if (menuAbertoAtual == "gerador-procuracao-fisica") {
+        if (menuAbertoAtual == "gerador-procuracao-fisica" && temValor == false) {
             gerarProcPf()
-        } else if (menuAbertoAtual == "gerador-procuracao-juridica") {
-            gerarProcPj()
+            console.log(temValor)
         }
+        if (menuAbertoAtual == "gerador-procuracao-fisica" && temValor == true) {
+            gerarProcPf2()
+            console.log(temValor)
+        }
+        // else if (menuAbertoAtual == "gerador-procuracao-juridica") {
+        //     gerarProcPj()
+        // }
 
     }
 

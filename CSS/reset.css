@@ -154,7 +154,7 @@ button {
 
 }
 
-@keyframes pisca {
+@keyframes transicao-lenta {
 	0% {
 		opacity: 0;
 	}
@@ -165,5 +165,5 @@ button {
 }
 
 #procSelectType {
-	animation: pisca 400ms;
+	animation: transicao-lenta 400ms;
 }

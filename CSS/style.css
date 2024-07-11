@@ -160,23 +160,6 @@ body {
     z-index: -1;
 }
 
-.btnsubback {
-
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.813);
-    background-color: rgba(255, 140, 58, 0.742);
-    font-family: "Noto Sans Display";
-    font-size: 25px;
-    border: none;
-    margin-top: 10px;
-    width: 30%;
-    height: 80px;
-    border-color: rgb(255, 255, 255);
-    border-width: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 #separador1 {
 
@@ -194,9 +177,6 @@ body {
     justify-content: space-around;
 }
 
-
-
-
 .btnsubback:hover {
 
     transition: all;
@@ -208,6 +188,28 @@ body {
     border-width: 1px;
     border-radius: 10px;
 }
+
+.btnsubback {
+
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.813);
+    background-color: rgba(255, 140, 58, 0.742);
+    font-family: "Noto Sans Display";
+    font-size: 25px;
+    border: none;
+    margin-top: 10px;
+    width: 30%;
+    height: 80px;
+    border-color: rgba(255, 255, 255, 0.37);
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 
 .btnside {
 
@@ -334,11 +336,12 @@ body {
 
 .inputboxprocfisica {
 
+    animation: transicao-lenta 400ms;
     flex-direction: column;
     left: 270px;
     top: 150px;
     position: absolute;
-    background-color: rgba(235, 145, 28, 0.534);
+    background-color: rgba(235, 145, 28, 0.767);
     display: none;
     height: 620px;
     width: 900px;
