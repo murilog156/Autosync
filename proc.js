@@ -1,4 +1,6 @@
 const params = new URLSearchParams(window.location.search);
+const trueOrfalse = params.get('proc2TF')
+
 const DadosProcPf = {
 
     proprietario: params.get('proprietario'),
@@ -15,20 +17,31 @@ const DadosProcPf = {
     cor: params.get('cor')
 };
 
-document.getElementById("nome-proprietario").innerHTML = DadosProcPf.proprietario
-document.getElementById("nome-proprietario-ass").innerHTML = DadosProcPf.proprietario
-document.getElementById("cpf-prop").innerHTML = DadosProcPf.cpf
-document.getElementById("nome-proc-1").innerHTML = DadosProcPf.procurador1
-document.getElementById("cpf-proc-1").innerHTML = DadosProcPf.cpfproc1
-document.getElementById("nome-proc-2").innerHTML = DadosProcPf.procurador2
-document.getElementById("cpf-proc-2").innerHTML = DadosProcPf.cpfproc2
-document.getElementById("marca-mod").innerHTML = DadosProcPf.marcamodelo
-document.getElementById("placa").innerHTML = DadosProcPf.placa
-document.getElementById("renavam").innerHTML = DadosProcPf.renavam
-document.getElementById("chassi").innerHTML = DadosProcPf.chassi
-document.getElementById("anofab-anomod").innerHTML = DadosProcPf.anoveiculo
-document.getElementById("cor").innerHTML = DadosProcPf.cor
-
-console.log(DadosProcPf)
-
-//window.print()
+if (trueOrfalse == "false") {
+    document.getElementById("nome-proprietario").innerHTML = DadosProcPf.proprietario
+    document.getElementById("nome-proprietario-ass").innerHTML = DadosProcPf.proprietario
+    document.getElementById("cpf-prop").innerHTML = DadosProcPf.cpf
+    document.getElementById("nome-proc-1").innerHTML = DadosProcPf.procurador1
+    document.getElementById("cpf-proc-1").innerHTML = DadosProcPf.cpfproc1
+    document.getElementById("marca-mod").innerHTML = DadosProcPf.marcamodelo
+    document.getElementById("placa").innerHTML = DadosProcPf.placa
+    document.getElementById("renavam").innerHTML = DadosProcPf.renavam
+    document.getElementById("chassi").innerHTML = DadosProcPf.chassi
+    document.getElementById("anofab-anomod").innerHTML = DadosProcPf.anoveiculo
+    document.getElementById("cor").innerHTML = DadosProcPf.cor
+}
+else {
+    document.getElementById("nome-proprietario").innerHTML = DadosProcPf.proprietario
+    document.getElementById("nome-proprietario-ass").innerHTML = DadosProcPf.proprietario
+    document.getElementById("cpf-prop").innerHTML = DadosProcPf.cpf
+    document.getElementById("nome-proc-1").innerHTML = DadosProcPf.procurador1
+    document.getElementById("cpf-proc-1").innerHTML = DadosProcPf.cpfproc1
+    document.getElementById("nome-proc-2").innerHTML = DadosProcPf.procurador2
+    document.getElementById("cpf-proc-2").innerHTML = DadosProcPf.cpfproc2
+    document.getElementById("marca-mod").innerHTML = DadosProcPf.marcamodelo
+    document.getElementById("placa").innerHTML = DadosProcPf.placa
+    document.getElementById("renavam").innerHTML = DadosProcPf.renavam
+    document.getElementById("chassi").innerHTML = DadosProcPf.chassi
+    document.getElementById("anofab-anomod").innerHTML = DadosProcPf.anoveiculo
+    document.getElementById("cor").innerHTML = DadosProcPf.cor
+}

@@ -1,24 +1,28 @@
+let menuAbertoAtual = null;
 
-// EXECUTA ESSA FUNÇÃO QUANDO EU CLICO EM QUALQUER BOTÃO DE TIPOS
-// E PASSA COMO PARAMETRO QUAL O BOTÃO QUE EU CLIQUEI
-// PARA EU PODER DECIDIR O QUE FAÇO CONFORME O TIPO QUE RECEBI
 
-// Operador OU -> || 
-// Operador AND -> &&
-// Operador maior que ->  >
-// Operador menor que ->  <
-// Operador menor ou igual que ->  <=
-// Operador maior ou igual que ->  >=
-/* Estados menuAbertoAtual possíveis:
+const formPrincipal = document.getElementById("encaixotei")
+const cxInfisico = document.getElementById("caixa-dos-inputs-fisicos")
+const cxInjuridico = document.getElementById("caixa-dos-inputs-juridicos")
+const cxInGrandes = document.getElementById("caixa-dos-inputs-grande")
+const cxProcSType = document.getElementById("procSelectType")
+formPrincipal.addEventListener("submit", gerarProc)
 
-gerador-de-procuracao-type
-gerador-procuracao-juridica
-gerador-procuracao-fisica
-recibo-simples
-
-*/
-
-function aaa() {
+function clean() {
+    document.getElementById('procPfInput1').value = ""
+    document.getElementById('procPfInput2').value = ""
+    document.getElementById('procPfInput3').value = ""
+    document.getElementById('procPfInput4').value = ""
+    document.getElementById('procPfInput5').value = ""
+    document.getElementById('procPfInput6').value = ""
+    document.getElementById('placa').value = ""
+    document.getElementById('rnvvei').value = ""
+    document.getElementById('marmodvei').value = ""
+    document.getElementById('chassi1').value = ""
+    document.getElementById('anoveiculo').value = ""
+    document.getElementById('corveiculo').value = ""
+}
+function preencher() {
 
     document.getElementById('procPfInput1').value = "MURILO GRADEL SOUZA BRITO"
     document.getElementById('procPfInput2').value = "038.882.260-07"
@@ -33,18 +37,6 @@ function aaa() {
     document.getElementById('anoveiculo').value = "2010 - 2010"
     document.getElementById('corveiculo').value = "VERMELHO"
 }
-
-let menuAbertoAtual = null;
-
-
-const formPrincipal = document.getElementById("encaixotei")
-const cxInfisico = document.getElementById("caixa-dos-inputs-fisicos")
-const cxInjuridico = document.getElementById("caixa-dos-inputs-juridicos")
-const cxInGrandes = document.getElementById("caixa-dos-inputs-grande")
-const cxProcSType = document.getElementById("procSelectType")
-formPrincipal.addEventListener("submit", gerarProc)
-
-
 function esconderProcSelecType(tipoproc) {
 
 
@@ -120,11 +112,11 @@ function gerarProcPf() {
         marcamodelo: document.getElementById('marmodvei').value,
         chassi: document.getElementById('chassi1').value,
         anoveiculo: document.getElementById('anoveiculo').value,
-        cor: document.getElementById('corveiculo').value
+        cor: document.getElementById('corveiculo').value,
+        proc2TF: false
     };
 
-    window.open(`./proc.html?proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
-        &marcamodelo=${DadosProcPf.marcamodelo}&chassi=${DadosProcPf.chassi}&anoveiculo=${DadosProcPf.anoveiculo}&cor=${DadosProcPf.cor}`)
+    window.open(`./proc.html?proc2TF=${DadosProcPf.proc2TF}&proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}&marcamodelo=${DadosProcPf.marcamodelo}&chassi=${DadosProcPf.chassi}&anoveiculo=${DadosProcPf.anoveiculo}&cor=${DadosProcPf.cor}`)
 
 
 }
@@ -143,10 +135,11 @@ function gerarProcPf2() {
         marcamodelo: document.getElementById('marmodvei').value,
         chassi: document.getElementById('chassi1').value,
         anoveiculo: document.getElementById('anoveiculo').value,
-        cor: document.getElementById('corveiculo').value
+        cor: document.getElementById('corveiculo').value,
+        proc2TF: true
     };
 
-    window.open(`./proc2.html?proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&procurador2=${DadosProcPf.procurador2}&cpfproc2=${DadosProcPf.cpfproc2}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
+    window.open(`./proc2.html?proc2TF=${DadosProcPf.proc2TF}&proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&procurador2=${DadosProcPf.procurador2}&cpfproc2=${DadosProcPf.cpfproc2}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
         &marcamodelo=${DadosProcPf.marcamodelo}&chassi=${DadosProcPf.chassi}&anoveiculo=${DadosProcPf.anoveiculo}&cor=${DadosProcPf.cor}`)
 
 
