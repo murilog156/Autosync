@@ -199,9 +199,7 @@ let TwoProcText = `<div id="title">Procuração</div>
         <div id="nome-proprietario-ass" class="fonte-info-saida"></div>
     </div>
 </div>`
-let CSS2Proc = `
-
-    #box-proc {
+let CSS2Proc = `#box-proc {
     background-color: rgba(0, 128, 0, 0);
     display: flex;
     height: 1300px;
