@@ -157,9 +157,8 @@ body {
     border-color: rgba(185, 185, 185, 0);
     border-width: 2px;
     padding-top: 10px;
-    z-index: -1;
+    z-index: 1;
 }
-
 
 #separador1 {
 
@@ -205,9 +204,6 @@ body {
     justify-content: center;
 }
 
-
-
-
 .btnside {
 
     border-radius: 8px;
@@ -224,7 +220,6 @@ body {
     border-style: none none solid none;
 
 }
-
 
 .btnside:hover {
 
@@ -279,7 +274,6 @@ body {
 
 }
 
-
 .btnsubmit {
 
     display: flex;
@@ -311,10 +305,10 @@ body {
     text-align: center;
     font-family: "Noto Sans Display";
     flex-direction: column;
-    left: 250px;
-    top: 150px;
+    left: 214px;
+    top: 120px;
     position: absolute;
-    background-color: rgba(235, 145, 28, 0.589);
+    background-color: hwb(34 11% 8% / 0.589);
     height: 370px;
     width: 200px;
     align-items: center;
@@ -323,13 +317,10 @@ body {
     border-color: var(--borderscolor);
     border-width: 2px;
     border-style: solid;
-
+    animation: transitionSide 400ms ease forwards;
+    z-index: 0;
 
 }
-
-
-
-
 
 .inputboxprocfisica {
 
@@ -367,7 +358,6 @@ body {
     border-style: solid;
 
 }
-
 
 .rcbform,
 .rcbform2 {
@@ -501,5 +491,4 @@ body {
     justify-content: space-evenly;
     gap: 30px;
     margin-bottom: 10px;
-
 }

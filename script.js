@@ -91,6 +91,13 @@ function openProcSelecType() {
     menuAbertoAtual = "gerador-de-procuracao-type"
     console.log(menuAbertoAtual);
 }
+function closeAnyTab() {
+
+    if (menuAbertoAtual == "gerador-de-procuracao-type") {
+        cxProcSType.style.display = "none"
+    }
+
+}
 function openRecibo() {
 
     fecharTodosMenus();
