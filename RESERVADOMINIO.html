@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style id="cssTag">
+    #marginCSS {
+        background-color: rgb(0, 78, 0);
+        height: 1300px;
+        width: 900px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #box-rDom {
+        background-color: rgb(39, 240, 39);
+        display: flex;
+        height: 1300px;
+        width: 800px;
+        flex-direction: column;
+        font-family: "Poppins", sans-serif;
+    }
+
+    #tituloRDom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #box-credor {
+        background-color: aqua;
+        width: 50%;
+    }
+
+    #box-devedor {
+
+        background-color: brown;
+        width: 50%;
+    }
+
+    #box-veiculo {
+        background-color: blueviolet;
+        width: 50%;
+    }
+
+    #box-venda {
+        background-color: chocolate;
+    }
+
+    #parcelasCSS {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .titulos-formato {
+        font-weight: 500;
+
+    }
+
+    #texto1 {
+
+        display: flex;
+        background-color: aqua;
+
+    }
+
+    #texto2 {
+        background-color: blueviolet;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .titulos-clausulas {
+        display: flex;
+        width: 20%;
+
+
+
+
+    }
+</style>
+
+<body>
+    <div id="marginCSS">
+        <div id="box-rDom">
+            <h2 id="tituloRDom">Contrato particular de venda de veículo Nº<div id="nContrato"></div>
+            </h2>
+            <div id="box-credor">
+                <div class="titulos-formato">· Credor:<div id="credorNome"></div>
+                </div>
+                <div class="titulos-formato">· Cpf:<div id="cpfCredor"></div>
+                </div>
+                <div class="titulos-formato">· Rg:<div id="rgCredor"></div>
+                </div>
+                <div class="titulos-formato">· Telefone:<div id="telefoneCredor"></div>
+                </div>
+                <div class="titulos-formato">· Endereço:<div id="EnderecoCredor"></div>
+                </div>
+                <div class="titulos-formato">· CEP:<div id="cepCredor"></div>
+                </div>
+
+            </div>
+            <div id="box-devedor">
+                <div class="titulos-formato">· Devedor:<div id="devedorNome"></div>
+                </div>
+                <div class="titulos-formato">· Cpf:<div id="cpfDevedor"></div>
+                </div>
+                <div class="titulos-formato">· Rg:<div id="rgDevedor"></div>
+                </div>
+                <div class="titulos-formato">· Endereço:<div id="EnderecoDevedor"></div>
+                </div>
+                <div class="titulos-formato">· CEP:<div id="cepDevedor"></div>
+                </div>
+                <div class="titulos-formato">· Telefone:<div id="telefoneDevedor"></div>
+                </div>
+            </div>
+            <div id="box-veiculo">
+                <div class="titulos-formato">· Placa:<div id="placaVeiculo"></div>
+                </div>
+                <div class="titulos-formato">· Renavam:<div id="renavamVeiculo"></div>
+                </div>
+                <div class="titulos-formato">· Chassi:<div id="chassiVeiculo"></div>
+                </div>
+                <div class="titulos-formato">· Marca/Modelo:<div id="marcaVeiculo"></div>
+                </div>
+                <div class="titulos-formato">· Ano Fab/Modelo:<div id="anoVeiculo"></div>
+                </div>
+            </div>
+            <div id="box-venda">
+                <div class="titulos-formato">· Valor total: <div id="valorTotal"></div>
+                </div>
+                <div class="titulos-formato">· Valor da entrada:<div id="valorEntrada"></div>
+                </div>
+                <div class="titulos-formato">· Valor financiado: <div id="valorFinanciado"></div>
+                </div>
+                <div class="titulos-formato" id="parcelasCSS">· Parcelas:<div id="xParcelas"></div>parcelas de R$<div
+                        id="valorParcelas"></div>
+                    cada.</div>
+                <div class="titulos-formato">· Primeira parcela: <div id="primeiraParcela"></div>
+                </div>
+                <div class="titulos-formato">· Última parcela: <div id="ultimaParcela"></div>
+                </div>
+                <div class="titulos-formato">· Formas de pagamento: <div id="formasPagamento"></div>
+                </div>
+            </div>
+            <div id="texto1">As partes acima mencionadas têm entre si justo e contratado o presente Contrato de
+                Venda de Veículo, que se regerá pelas cláusulas seguintes:
+            </div>
+            <div id="texto2">
+                <div class="titulos-clausulas">CLÁUSULA 1:</div>O CREDOR vende ao DEVEDOR o veículo descrito acima pelo
+                valor
+                total de R$ 20.520,00 (vinte mil, quinhentos e vinte reais).
+            </div>
+            <div id="texto3"></div>
+            <div id="texto4"></div>
+
+        </div>
+    </div>
+    <!--
+    <script src="./proc.js"></script> /////// DESCOMENTAR ASSIM QUE FINALIZAR
+     -->
+</body>
+
+</html>
