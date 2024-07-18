@@ -20,9 +20,16 @@
 </head>
 
 <style id="cssTag">
+    :root {
+
+        --font-size: 20px;
+        --gap: 8.05px;
+    }
+
+
     #marginCSS {
         background-color: rgb(0, 78, 0);
-        height: 1300px;
+        height: 100%;
         width: 900px;
         display: flex;
         justify-content: center;
@@ -32,10 +39,11 @@
     #box-rDom {
         background-color: rgb(39, 240, 39);
         display: flex;
-        height: 1300px;
+        height: 100%;
         width: 800px;
         flex-direction: column;
         font-family: "Poppins", sans-serif;
+        gap: var(--gap);
     }
 
     #tituloRDom {
@@ -44,23 +52,23 @@
         justify-content: center;
     }
 
+    #box-devedor,
     #box-credor {
         background-color: aqua;
         width: 50%;
+        font-size: var(--font-size);
     }
 
-    #box-devedor {
-
-        background-color: brown;
-        width: 50%;
-    }
 
     #box-veiculo {
-        background-color: blueviolet;
+        background-color: aqua;
         width: 50%;
+        font-size: var(--font-size);
+
     }
 
     #box-venda {
+        font-size: var(--font-size);
         background-color: chocolate;
     }
 
@@ -74,27 +82,105 @@
 
     }
 
-    #texto1 {
+    #texto1,
+    #texto2 {
+
 
         display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: aqua;
+        font-size: var(--font-size);
 
     }
 
-    #texto2 {
-        background-color: blueviolet;
+    #clausula1,
+    #clausula2,
+    #clausula3,
+    #clausula4,
+    #clausula5,
+    #clausula6,
+    #clausula7 {
+        font-size: var(--font-size);
+        background-color: rgb(177, 166, 132);
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+
+
 
     }
 
     .titulos-clausulas {
+
         display: flex;
-        width: 20%;
+        flex-direction: row;
+        width: 100%;
+        background-color: rgba(137, 43, 226, 0.274);
 
+    }
 
+    #divClau {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
 
+    }
 
+    #box-infos {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+
+    }
+
+    .titulos-partes {
+        background-color: cyan;
+        display: flex;
+        width: 30%;
+        font-weight: 500;
+        font-size: 22px;
+    }
+
+    #assinaturas {
+        font-size: 22px;
+        background-color: cyan;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 290px;
+        margin-top: 10px;
+        gap: 70px;
+
+    }
+
+    #loc-data {
+        font-size: 22px;
+        background-color: rgba(179, 110, 175, 0.863);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #align1,
+    #align2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .line {
+        font-family: "Roboto", sans-serif;
+    }
+
+    #box-credor,
+    #box-devedor,
+    #box-veiculo,
+    #box-venda {
+        margin-left: 20px;
     }
 </style>
 
@@ -103,74 +189,151 @@
         <div id="box-rDom">
             <h2 id="tituloRDom">Contrato particular de venda de veículo Nº<div id="nContrato"></div>
             </h2>
-            <div id="box-credor">
-                <div class="titulos-formato">· Credor:<div id="credorNome"></div>
-                </div>
-                <div class="titulos-formato">· Cpf:<div id="cpfCredor"></div>
-                </div>
-                <div class="titulos-formato">· Rg:<div id="rgCredor"></div>
-                </div>
-                <div class="titulos-formato">· Telefone:<div id="telefoneCredor"></div>
-                </div>
-                <div class="titulos-formato">· Endereço:<div id="EnderecoCredor"></div>
-                </div>
-                <div class="titulos-formato">· CEP:<div id="cepCredor"></div>
-                </div>
+            <div id="box-infos">
+                <div class="titulos-partes">DADOS DAS PARTES:</div>
+                <div id="box-credor">
+                    <div class="titulos-formato">• Credor:<div id="credorNome"></div>
+                    </div>
+                    <div class="titulos-formato">• Cpf:<div id="cpfCredor"></div>
+                    </div>
+                    <div class="titulos-formato">• Rg:<div id="rgCredor"></div>
+                    </div>
+                    <div class="titulos-formato">• Endereço:<div id="EnderecoCredor"></div>
+                    </div>
+                    <div class="titulos-formato">• CEP:<div id="cepCredor"></div>
+                    </div>
+                    <div class="titulos-formato">• Telefone:<div id="telefoneCredor"></div>
+                    </div>
 
-            </div>
-            <div id="box-devedor">
-                <div class="titulos-formato">· Devedor:<div id="devedorNome"></div>
                 </div>
-                <div class="titulos-formato">· Cpf:<div id="cpfDevedor"></div>
+                <div id="box-devedor">
+                    <div class="titulos-formato">• Devedor:<div id="devedorNome"></div>
+                    </div>
+                    <div class="titulos-formato">• Cpf:<div id="cpfDevedor"></div>
+                    </div>
+                    <div class="titulos-formato">• Rg:<div id="rgDevedor"></div>
+                    </div>
+                    <div class="titulos-formato">• Endereço:<div id="EnderecoDevedor"></div>
+                    </div>
+                    <div class="titulos-formato">• CEP:<div id="cepDevedor"></div>
+                    </div>
+                    <div class="titulos-formato">• Telefone:<div id="telefoneDevedor"></div>
+                    </div>
                 </div>
-                <div class="titulos-formato">· Rg:<div id="rgDevedor"></div>
+                <div class="titulos-partes">DADOS DO VEÍCULO:</div>
+                <div id="box-veiculo">
+                    <div class="titulos-formato">• Marca/Modelo:<div id="marcaVeiculo"></div>
+                    </div>
+                    <div class="titulos-formato">• Placa:<div id="placaVeiculo"></div>
+                    </div>
+                    <div class="titulos-formato">• Renavam:<div id="renavamVeiculo"></div>
+                    </div>
+                    <div class="titulos-formato">• Chassi:<div id="chassiVeiculo"></div>
+                    </div>
+                    <div class="titulos-formato">• Ano Fab/Modelo:<div id="anoVeiculo"></div>
+                    </div>
                 </div>
-                <div class="titulos-formato">· Endereço:<div id="EnderecoDevedor"></div>
-                </div>
-                <div class="titulos-formato">· CEP:<div id="cepDevedor"></div>
-                </div>
-                <div class="titulos-formato">· Telefone:<div id="telefoneDevedor"></div>
-                </div>
-            </div>
-            <div id="box-veiculo">
-                <div class="titulos-formato">· Placa:<div id="placaVeiculo"></div>
-                </div>
-                <div class="titulos-formato">· Renavam:<div id="renavamVeiculo"></div>
-                </div>
-                <div class="titulos-formato">· Chassi:<div id="chassiVeiculo"></div>
-                </div>
-                <div class="titulos-formato">· Marca/Modelo:<div id="marcaVeiculo"></div>
-                </div>
-                <div class="titulos-formato">· Ano Fab/Modelo:<div id="anoVeiculo"></div>
-                </div>
-            </div>
-            <div id="box-venda">
-                <div class="titulos-formato">· Valor total: <div id="valorTotal"></div>
-                </div>
-                <div class="titulos-formato">· Valor da entrada:<div id="valorEntrada"></div>
-                </div>
-                <div class="titulos-formato">· Valor financiado: <div id="valorFinanciado"></div>
-                </div>
-                <div class="titulos-formato" id="parcelasCSS">· Parcelas:<div id="xParcelas"></div>parcelas de R$<div
-                        id="valorParcelas"></div>
-                    cada.</div>
-                <div class="titulos-formato">· Primeira parcela: <div id="primeiraParcela"></div>
-                </div>
-                <div class="titulos-formato">· Última parcela: <div id="ultimaParcela"></div>
-                </div>
-                <div class="titulos-formato">· Formas de pagamento: <div id="formasPagamento"></div>
+                <div class="titulos-partes">DADOS DA VENDA:</div>
+                <div id="box-venda">
+                    <div class="titulos-formato">• Valor total: <div id="valorTotal"></div>
+                    </div>
+                    <div class="titulos-formato">• Valor da entrada:<div id="valorEntrada"></div>
+                    </div>
+                    <div class="titulos-formato">• Valor financiado: <div id="valorFinanciado"></div>
+                    </div>
+                    <div class="titulos-formato" id="parcelasCSS">• Parcelas:<div id="xParcelas"></div>parcelas de R$
+                        <div id="valorParcelas"></div>
+                        cada.
+                    </div>
+                    <div class="titulos-formato">• Primeira parcela: <div id="primeiraParcela"></div>
+                    </div>
+                    <div class="titulos-formato">• Última parcela: <div id="ultimaParcela"></div>
+                    </div>
+                    <div class="titulos-formato">• Formas de pagamento: <div id="formasPagamento"></div>
+                    </div>
                 </div>
             </div>
             <div id="texto1">As partes acima mencionadas têm entre si justo e contratado o presente Contrato de
                 Venda de Veículo, que se regerá pelas cláusulas seguintes:
             </div>
-            <div id="texto2">
-                <div class="titulos-clausulas">CLÁUSULA 1:</div>O CREDOR vende ao DEVEDOR o veículo descrito acima pelo
-                valor
-                total de R$ 20.520,00 (vinte mil, quinhentos e vinte reais).
+
+            <div id="divClau">
+                <div id="clausula1">
+                    <div class="titulos-clausulas">CLÁUSULA 1:</div>
+                    O CREDOR vende ao DEVEDOR o veículo descrito acima pelo
+                    valor
+                    total de R$ 20.520,00 (vinte mil, quinhentos e vinte reais).
+                </div>
+                <div id="clausula2">
+                    <div class="titulos-clausulas">CLÁUSULA 2:</div>
+                    Por conta do preço referido na cláusula 1, o DEVEDOR pagou neste ato a quantia de R$
+                    0,00 (Zero reais) e o valor financiado de R$ 12.000,00 (Doze mil reais), que será pago em 24
+                    parcelas de
+                    R$ 500,00 (Quinhentos reais) cada, pago em dinheiro, PIX, ou transferência bancária, nas
+                    seguintes
+                    datas: a primeira em 10/08/2024 e a última em 10/07/2026.
+                </div>
+                <div id="clausula3">
+                    <div class="titulos-clausulas">CLÁUSULA 3:</div>
+                    Por força do pacto da alienação fiduciária, fica estabelecido que o CREDOR terá a prioridade
+                    sobre o
+                    veículo descrito na cláusula 1 até que seja liquidada a última das prestações mencionadas acima.
+                </div>
+                <div id="clausula4">
+                    <div class="titulos-clausulas">CLÁUSULA 4:</div>
+                    Em caso de atraso no pagamento de qualquer parcela mencionada na cláusula 2, o DEVEDOR incorrerá
+                    em
+                    multa de 2% sobre o valor em atraso, além de juros de mora de 1% ao mês. O não cumprimento das
+                    obrigações financeiras poderá resultar na restituição do veículo ao CREDOR, conforme estipulado
+                    nos
+                    artigos 343 e seguintes do Código de Processo Civil. ÚNICO - O CREDOR poderá optar pela rescisão
+                    deste
+                    contrato em caso de mora ou inadimplemento pelo DEVEDOR, procedendo à cobrança judicial dos
+                    valores
+                    devidos.
+                </div>
+                <div id="clausula5">
+                    <div class="titulos-clausulas">CLÁUSULA 5:</div>
+                    A falência do DEVEDOR implicará na resolução deste contrato, permitindo ao CREDOR reivindicar o
+                    veículo
+                    junto à massa falida.
+                </div>
+                <div id="clausula6">
+                    <div class="titulos-clausulas">CLÁUSULA 6:</div>
+                    Enquanto não estiver integralmente pago o preço estipulado na cláusula 2, o DEVEDOR se
+                    compromete a
+                    manter o veículo em perfeito estado de conservação, protegendo-o contra terceiros e permitindo
+                    ao
+                    CREDOR
+                    inspecioná-lo quando necessário, mediante aviso prévio por escrito em caso de mudança de
+                    residência.
+                </div>
+                <div id="clausula7">
+                    <div class="titulos-clausulas">CLÁUSULA 7:</div>
+                    O DEVEDOR assume integral responsabilidade civil e criminal por quaisquer acidentes, multas de
+                    trânsito,
+                    impostos, seguro obrigatório e outras obrigações relacionadas ao veículo a partir da data de
+                    assinatura
+                    deste contrato. Até a assinatura do contrato, essas obrigações são de responsabilidade do
+                    CREDOR.
+                </div>
             </div>
-            <div id="texto3"></div>
-            <div id="texto4"></div>
+            <div id="texto2">E, por estarem assim justos e contratados, firmam o presente instrumento particular em
+                duas
+                vias de igual teor, juntamente com as testemunhas abaixo assinadas.</div>
+            <div id="loc-data">Local e data: <div id="loc-data-valor"></div>
+            </div>
+
+            <div id="assinaturas">
+                <div id="align1">
+                    <div class="line">________________________________________</div>
+                    <div id="credorAss"></div>
+                </div>
+                <div id="align2">
+                    <div class="line">________________________________________</div>
+                    <div id="devedorAss"></div>
+                </div>
+            </div>
 
         </div>
     </div>
