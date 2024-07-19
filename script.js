@@ -6,6 +6,7 @@ const cxInfisico = document.getElementById("caixa-dos-inputs-fisicos")
 const cxInjuridico = document.getElementById("caixa-dos-inputs-juridicos")
 const cxInGrandes = document.getElementById("caixa-dos-inputs-grande")
 const cxProcSType = document.getElementById("procSelectType")
+const cxContrSType = document.getElementById("contractSelectType")
 formPrincipal.addEventListener("submit", gerarProc)
 
 function clean() {
@@ -83,6 +84,7 @@ function retornaProcSelecType() {
 function fecharTodosMenus() {
     cxProcSType.style.display = "none";
     cxInGrandes.style.display = "none";
+    cxContrSType.style.display = "none";
     menuAbertoAtual = "null"
 }
 function openProcSelecType() {
@@ -90,21 +92,6 @@ function openProcSelecType() {
     cxProcSType.style.display = "flex"
     menuAbertoAtual = "gerador-de-procuracao-type"
     console.log(menuAbertoAtual);
-}
-function closeAnyTab() {
-
-    if (menuAbertoAtual == "gerador-de-procuracao-type") {
-        cxProcSType.style.display = "none"
-    }
-
-}
-function openRecibo() {
-
-    fecharTodosMenus();
-    menuAbertoAtual = "recibo-simples";
-    console.log(menuAbertoAtual);
-
-
 }
 function gerarProcPf() {
 
@@ -206,9 +193,25 @@ function gerarProc(evento1) {
     }
 
 }
+function openContratos() {
+
+    fecharTodosMenus();
+    cxContrSType.style.display = "flex"
+    menuAbertoAtual = "contratos";
+    console.log(menuAbertoAtual);
 
 
+}
+function fecharGuia() {
 
+    if (menuAbertoAtual == "gerador-de-procuracao-type") {
+        cxProcSType.style.display = "none"
+    }
+    if (menuAbertoAtual == "contratos") {
+        cxContrSType.style.display = "none"
+    }
+
+}
 
 
 

@@ -30,18 +30,25 @@
 
         <button onmouseenter="openProcSelecType()" onmouseleave="fecharTodosMenus()" class="btnside">Gerador de
             procuração</button>
-        <button onclick="openRecibo()" class="btnside">Contratos</button>
+
+        <button onmouseenter="openContratos()" onmouseleave="fecharTodosMenus()" class="btnside">Contratos</button>
         <button class="btnside">Recibo</button>
         <button class="btnside">Consulta CPF</button>
     </nav>
 
-    <div id="procSelectType" class="testet" onmouseenter="openProcSelecType()" onmouseleave="closeAnyTab()">
+    <div id="procSelectType" class="testet" onmouseenter="openProcSelecType()" onmouseleave="fecharGuia()">
         Selecione o tipo de procuração:
         <button class="btnsubmit" onclick="esconderProcSelecType('fisica')"> Pessoa física</button>
         <button class="btnsubmit" onclick="esconderProcSelecType('juridica')"> Pessoa jurídica</button>
         <button class="btnsubmit"> Procuração avançada</button>
 
     </div>
+
+    <div id="contractSelectType" class="testet" onmouseenter="openContratos()" onmouseleave="fecharGuia()">
+        Selecione o tipo de contrato:
+        <button onclick="" class="btnsubmit"> Alienação Fiduciária</button>
+    </div>
+
 
     <div class="inputboxprocfisica" id="caixa-dos-inputs-grande">
 

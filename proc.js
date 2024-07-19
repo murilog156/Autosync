@@ -1,3 +1,6 @@
+
+//QUERO COLOCAR DENTRO DE UMA FUNCTION
+
 const params = new URLSearchParams(window.location.search);
 const trueOrfalse = params.get('proc2TF')
 const DadosProcPf = {
@@ -640,3 +643,5 @@ else {
     document.getElementById("anofab-anomod").innerHTML = DadosProcPf.anoveiculo
     document.getElementById("cor").innerHTML = DadosProcPf.cor
 }
+
+//QUERO COLOCAR DENTRO DE UMA FUNCTION

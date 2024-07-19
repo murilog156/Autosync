@@ -94,7 +94,7 @@
 
     }
 
-    #clausula1,
+
     #clausula2,
     #clausula3,
     #clausula4,
@@ -182,6 +182,25 @@
     #box-venda {
         margin-left: 20px;
     }
+
+    #clausula1-total {}
+
+    #clausula1 {
+        font-size: var(--font-size);
+        background-color: rgb(7, 138, 214);
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+
+    }
+
+    .clausula {
+        background-color: #ffffff00;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        line-height: 1.6;
+    }
 </style>
 
 <body>
@@ -192,58 +211,60 @@
             <div id="box-infos">
                 <div class="titulos-partes">DADOS DAS PARTES:</div>
                 <div id="box-credor">
-                    <div class="titulos-formato">• Credor:<div id="credorNome"></div>
+                    <div class="titulos-formato">• Credor:<div id="credorNome" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Cpf:<div id="cpfCredor"></div>
+                    <div class="titulos-formato">• Cpf:<div id="cpfCredor" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Rg:<div id="rgCredor"></div>
+                    <div class="titulos-formato">• Rg:<div id="rgCredor" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Endereço:<div id="EnderecoCredor"></div>
+                    <div class="titulos-formato">• Endereço:<div id="enderecoCredor" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• CEP:<div id="cepCredor"></div>
+                    <div class="titulos-formato">• CEP:<div id="cepCredor" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Telefone:<div id="telefoneCredor"></div>
+                    <div class="titulos-formato">• Telefone:<div id="telefoneCredor" class="fonte-info-saida"></div>
                     </div>
 
                 </div>
                 <div id="box-devedor">
-                    <div class="titulos-formato">• Devedor:<div id="devedorNome"></div>
+                    <div class="titulos-formato">• Devedor:<div id="devedorNome" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Cpf:<div id="cpfDevedor"></div>
+                    <div class="titulos-formato">• Cpf:<div id="cpfDevedor" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Rg:<div id="rgDevedor"></div>
+                    <div class="titulos-formato">• Rg:<div id="rgDevedor" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Endereço:<div id="EnderecoDevedor"></div>
+                    <div class="titulos-formato">• Endereço:<div id="enderecoDevedor" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• CEP:<div id="cepDevedor"></div>
+                    <div class="titulos-formato">• CEP:<div id="cepDevedor" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Telefone:<div id="telefoneDevedor"></div>
+                    <div class="titulos-formato">• Telefone:<div id="telefoneDevedor" class="fonte-info-saida"></div>
                     </div>
                 </div>
                 <div class="titulos-partes">DADOS DO VEÍCULO:</div>
                 <div id="box-veiculo">
-                    <div class="titulos-formato">• Marca/Modelo:<div id="marcaVeiculo"></div>
+                    <div class="titulos-formato">• Marca/Modelo:<div id="marcaVeiculo" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Placa:<div id="placaVeiculo"></div>
+                    <div class="titulos-formato">• Placa:<div id="placaVeiculo" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Renavam:<div id="renavamVeiculo"></div>
+                    <div class="titulos-formato">• Renavam:<div id="renavamVeiculo" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Chassi:<div id="chassiVeiculo"></div>
+                    <div class="titulos-formato">• Chassi:<div id="chassiVeiculo" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Ano Fab/Modelo:<div id="anoVeiculo"></div>
+                    <div class="titulos-formato">• Ano Fab/Modelo:<div id="anoVeiculo" class="fonte-info-saida"></div>
                     </div>
                 </div>
                 <div class="titulos-partes">DADOS DA VENDA:</div>
                 <div id="box-venda">
-                    <div class="titulos-formato">• Valor total: <div id="valorTotal"></div>
+                    <div class="titulos-formato">• Valor total: <div id="valorTotal" class="fonte-info-saida"></div>
                     </div>
-                    <div class="titulos-formato">• Valor da entrada:<div id="valorEntrada"></div>
+                    <div class="titulos-formato">• Valor da entrada:<div id="valorEntrada" class="fonte-info-saida">
+                        </div>
                     </div>
-                    <div class="titulos-formato">• Valor financiado: <div id="valorFinanciado"></div>
+                    <div class="titulos-formato">• Valor financiado: <div id="valorFinanciado" class="fonte-info-saida">
+                        </div>
                     </div>
-                    <div class="titulos-formato" id="parcelasCSS">• Parcelas:<div id="xParcelas"></div>parcelas de R$
-                        <div id="valorParcelas"></div>
-                        cada.
+                    <div class="titulos-formato" id="parcelasCSS">• Parcelas:<div id="xParcelas"
+                            class="fonte-info-saida"></div>parcelas de R$<div id="valorParcelas"
+                            class="fonte-info-saida"></div>cada.
                     </div>
                     <div class="titulos-formato">• Primeira parcela: <div id="primeiraParcela"></div>
                     </div>
@@ -260,18 +281,27 @@
             <div id="divClau">
                 <div id="clausula1">
                     <div class="titulos-clausulas">CLÁUSULA 1:</div>
-                    O CREDOR vende ao DEVEDOR o veículo descrito acima pelo
-                    valor
-                    total de R$ 20.520,00 (vinte mil, quinhentos e vinte reais).
+                    <div>
+                        O CREDOR vende ao DEVEDOR o veículo descrito acima pelo
+                        valor total de R$<span class="fonte-info-saida" id="clausula1-total">20.520,00</span>.
+                    </div>
                 </div>
                 <div id="clausula2">
                     <div class="titulos-clausulas">CLÁUSULA 2:</div>
-                    Por conta do preço referido na cláusula 1, o DEVEDOR pagou neste ato a quantia de R$
-                    0,00 (Zero reais) e o valor financiado de R$ 12.000,00 (Doze mil reais), que será pago em 24
-                    parcelas de
-                    R$ 500,00 (Quinhentos reais) cada, pago em dinheiro, PIX, ou transferência bancária, nas
-                    seguintes
-                    datas: a primeira em 10/08/2024 e a última em 10/07/2026.
+
+                    <!--GPT-->
+                    <div class="clausula2-2">
+                        Por conta do preço referido na cláusula 1, o DEVEDOR pagou neste ato a quantia de R$ <span
+                            class="fonte-info-saida" id="clausula-entrada-valor"></span> e o valor financiado de R$
+                        <span class="fonte-info-saida" id="clausula-financiado-valor"></span>, que será pago em <span
+                            class="fonte-info-saida" id="clausula-parcelas-numero"></span> parcelas de R$
+                        <span class="fonte-info-saida" id="clausula-parcelas-valor"></span> cada, pago em dinheiro, PIX,
+                        ou
+                        transferência bancária, nas seguintes datas: a primeira em <span class="fonte-info-saida"
+                            id="clausula-data-primeira"></span> e a última
+                        em <span class="fonte-info-saida" id="clausula-data-ultima"></span>.
+                    </div>
+                    <!--GPT-->
                 </div>
                 <div id="clausula3">
                     <div class="titulos-clausulas">CLÁUSULA 3:</div>
@@ -343,3 +373,17 @@
 </body>
 
 </html>
+
+
+
+
+
+<!-- <div id="clausula2-2">
+                    Por conta do preço referido na cláusula 1, o DEVEDOR pagou neste ato a quantia de R$
+                    <div id="valor-entrada"></div>
+                    e o valor financiado de R$ <div id="valor-financiado"></div>, que será pago em <div
+                        id="clau-xparcelas">24</div>
+                    parcelas de
+                    R$ <div id="clau-valor-parcela"></div> cada, pago em dinheiro, PIX, ou transferência bancária, nas
+                    seguintes datas: a primeira em <div id="data-primeira-parcela">10/08/2024</div> e a última em <div
+                        id="data-ultima-parcela">10/07/2026</div>.</div> -->
