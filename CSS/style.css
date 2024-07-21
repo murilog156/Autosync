@@ -125,8 +125,16 @@ label {
 
 .t4 {
 
-    width: 300px;
+    width: 100px;
     height: 35px;
+    margin-right: 45%;
+
+}
+
+.t5 {
+    width: 130px;
+    height: 50px;
+    display: flex;
 
 }
 
@@ -174,6 +182,14 @@ body {
     width: 50%;
     align-items: center;
     justify-content: space-around;
+}
+
+#btnProx:hover {
+    transition: all;
+    background-color: rgb(238, 238, 238);
+    color: rgb(0, 0, 0);
+    transition-duration: 300ms;
+    border-radius: 10px;
 }
 
 .btnsubback:hover {
@@ -516,13 +532,29 @@ body {
     margin-bottom: 10px;
 }
 
+
+
+
+
+
+#tituloRDom {
+    color: rgb(110, 109, 109);
+    background-color: rgba(119, 31, 31, 0);
+    font-size: 25px;
+    font-family: var(--font-family);
+    position: relative;
+    margin-top: 18px;
+    font-weight: 600;
+
+}
+
 #inputBoxContratoResDom {
     animation: transicao-lenta 400ms;
     flex-direction: column;
     left: 270px;
     top: 150px;
+    background-color: rgba(175, 123, 45, 0.726);
     position: absolute;
-    background-color: rgba(235, 145, 28, 0.767);
     display: none;
     height: 720px;
     width: 900px;
@@ -539,9 +571,9 @@ body {
     animation: transicao-lenta 400ms;
     flex-direction: row;
     left: 270px;
-    top: 150px;
-    background-color: rgba(207, 108, 26, 0);
-    display: flex;
+    margin-top: 15px;
+    background-color: rgba(12, 201, 91, 0);
+    display: none;
     height: 620px;
     width: 900px;
     align-items: center;
@@ -549,8 +581,6 @@ body {
     border-color: var(--borderscolor);
     border-width: 2px;
     font-family: var(--font-family);
-
-
 }
 
 #devedorRdom,
@@ -561,40 +591,103 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 60px;
     gap: 15px;
     font-family: var(--font-family);
+}
+
+#btnProx {
+
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.813);
+    background-color: rgba(255, 140, 58, 0.742);
+    font-family: "Noto Sans Display";
+    font-size: 25px;
+    border: none;
+    width: 30%;
+    height: 80px;
+    border-color: rgba(255, 255, 255, 0.37);
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+
+}
+
+#inputBoxVeiculoEVenda {
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
 
 }
 
 .labelRDom {
     color: rgb(255, 255, 255);
     align-self: baseline;
-    margin-left: 80px;
+
     font-size: 22px;
     font-family: var(--font-family);
+}
+
+
+#veiculoRDom {
+    background-color: rgba(218, 221, 18, 0);
+    height: 80%;
+    width: 50%;
+    display: flex;
+    margin-left: 5%;
+    margin-top: 25px;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#vendaRDom {
+
+
+    background-color: rgba(218, 221, 18, 0);
+    height: 80%;
+    display: flex;
+    margin-top: 25px;
+    margin-left: 5%;
+    flex-direction: column;
+    gap: 20px;
+
 
 
 }
 
-#divProBtn {
-    background-color: rgba(0, 255, 255, 0);
+#btnsCenter {
+
+    flex-direction: row;
+    position: absolute;
+    background-color: rgba(255, 17, 0, 0);
     display: flex;
     width: 100%;
-    height: 130px;
-    align-items: center;
+    height: 100px;
+    bottom: 10px;
     justify-content: center;
+    gap: 15%;
 
 }
 
-#tituloRDom {
-    color: rgb(110, 109, 109);
-    background-color: rgba(39, 39, 39, 0);
-    font-size: 25px;
+#valorTotalRDom {
+
+    display: flex;
+    align-items: center;
+    padding: 5px;
     font-family: var(--font-family);
-    position: absolute;
-    margin-top: 18px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 400;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    height: 40px;
+    border-radius: 10px;
 
 }

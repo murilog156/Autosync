@@ -46,7 +46,7 @@
 
     <div id="contractSelectType" class="testet" onmouseenter="openContratos()" onmouseleave="fecharGuia()">
         Selecione o tipo de contrato:
-        <button onclick="" class="btnsubmit"> Alienação Fiduciária</button>
+        <button onclick="abrirContratoReservaDominioPg1()" class="btnsubmit"> Alienação Fiduciária</button>
     </div>
 
 
@@ -146,54 +146,92 @@
 
     </div>
 
-    <!------------------------------------------------------------------------------------------------->
 
-    <div class="inputBoxContratoResDomCSS" id="inputBoxContratoResDom">
+
+    <form onsubmit="gerarContratoAlienacaoFiduciaria()" class="inputBoxContratoResDomCSS" id="inputBoxContratoResDom">
         <h1 id="tituloRDom">CONTRATO DE ALIENAÇÃO FIDUCIÁRIA ✎</h1>
-        <div id="inputBoxPartes">
 
+        <div id="inputBoxPartes">
             <div id="credorRdom">
                 <label class="labelRDom" for="credor">Vendedor ↴</label>
-                <input name="credor" class="t1 form1" type="text" placeholder="Nome completo">
+                <input id="credor1" name="credor" class="t1 form1" type="text" placeholder="Nome completo">
                 <label class="labelRDom" for="cpfCredor">CPF Vendedor ↴</label>
-                <input name="cpfCredor" class="t1 form1" type="text" placeholder="CPF Vendedor">
+                <input id="cpfCredor1" maxlength="14" minlength="11" name="cpfCredor" class="t1 form1" type="text"
+                    placeholder="CPF Vendedor">
                 <label class="labelRDom" for="rgCredor">RG Vendedor ↴</label>
-                <input name="rgCredor" class="t1 form1" type="text" placeholder="RG Vendedor">
+                <input id="rgCredor1" name="rgCredor" class="t1 form1" type="text" placeholder="RG Vendedor">
                 <label class="labelRDom" for="endCredor">Endereço completo ↴</label>
-                <input name="endCredor" class="t1 form1" type="text" placeholder="Endereço completo">
+                <input id="endCredor1" name="endCredor" class="t1 form1" type="text" placeholder="Endereço completo">
                 <label class="labelRDom" for="cepCredor">CEP Vendedor ↴</label>
-                <input name="cepCredor" class="t1 form1" type="text" placeholder="CEP">
+                <input id="cepCredor1" name="cepCredor" class="t1 form1" type="text" placeholder="CEP">
                 <label class="labelRDom" for="telCredor">Telefone Vendedor ↴</label>
-                <input name="telCredor" class="t1 form1" type="text" placeholder="Telefone (DDD)">
+                <input id="telCredor1" name="telCredor" class="t1 form1" type="text" placeholder="Telefone (DDD)">
 
             </div>
             <div id="devedorRdom">
                 <label class="labelRDom" for="devedor">Comprador ↴</label>
-                <input name="devedor" class="t1 form1" type="text" placeholder="Nome completo">
+                <input id="devedor1" name="devedor" class="t1 form1" type="text" placeholder="Nome completo">
                 <label class="labelRDom" for="cpfDevedor">CPF Comprador ↴</label>
-                <input name="cpfDevedor" class="t1 form1" type="text" placeholder="CPF Comprador">
+                <input id="cpfDevedor1" maxlength="14" minlength="11" name="cpfDevedor" class="t1 form1" type="text"
+                    placeholder="CPF Comprador">
                 <label class="labelRDom" for="rgDevedor">RG Comprador ↴</label>
-                <input name="rgDevedor" class="t1 form1" type="text" placeholder="RG Comprador">
+                <input id="rgDevedor1" name="rgDevedor" class="t1 form1" type="text" placeholder="RG Comprador">
                 <label class="labelRDom" for="endDevedor">Endereço completo ↴</label>
-                <input name="endDevedor" class="t1 form1" type="text" placeholder="Endereço completo">
+                <input id="endDevedor1" name="endDevedor" class="t1 form1" type="text" placeholder="Endereço completo">
                 <label class="labelRDom" for="cepDevedor">CEP Comprador ↴</label>
-                <input name="cepDevedor" class="t1 form1" type="text" placeholder="CEP">
+                <input id="cepDevedor1" name="cepDevedor" class="t1 form1" type="text" placeholder="CEP">
                 <label class="labelRDom" for="telDevedor">Telefone Comprador ↴</label>
-                <input name="telDevedor" class="t1 form1" type="text" placeholder="Telefone (DDD)">
+                <input id="telDevedor1" name="telDevedor" class="t1 form1" type="text" placeholder="Telefone (DDD)">
             </div>
+            <button type="button" onclick="abrirContratoReservaDominioPg2()" id="btnProx">PRÓXIMO ▶</button>
+
+
 
         </div>
+
         <div id="inputBoxVeiculoEVenda">
-            <div id="veiculoRdom">
+            <div id="veiculoRDom">
+                <label class="labelRDom" for="marcaMod">Marca/Modelo ↴</label>
+                <input id="MaMod" name="marcaMod" class="t1 form1" type="text" placeholder="Marca/Modelo">
+                <label class="labelRDom" for="placa">Placa ↴</label>
+                <input id="placa1" name="placa" class="t1 form1" type="text" placeholder="Placa">
+                <label class="labelRDom" for="renavam">Revavam ↴</label>
+                <input id="renavam1" name="renavam" class="t1 form1" type="text" placeholder="123456789">
+                <label class="labelRDom" for="chassi">Chassi ↴</label>
+                <input id="chassi2" name="chassi" class="t1 form1" type="text" placeholder="EX: aaaaaaaaaaaa">
+                <label class="labelRDom" for="anoMod">Ano/Mod ↴</label>
+                <input id="anoFabMod" name="AnoMod" class="t1 form1" type="text" placeholder="Ano/Mod">
 
             </div>
-            <div id="vendaRdom"></div>
+            <div id="vendaRDom">
+
+                <label class="labelRDom" for="entrada">⬐ Valor de entrada</label>
+                <input id="vlrEntrada" name="entrada" type="number" class="t5 form1" placeholder="Entrada R$">
+                <label class="labelRDom" for="xParcelas">⬐ Número de parcelas</label>
+                <input id="xParcelas1" name="xParcelas" type="number" class="t5 form1" placeholder="X Parcelas">
+                <label for="valorParcelas" class="labelRDom">⬐ Valor das parcelas</label>
+                <input id="vlrParcelas" type="number" name="valorParcelas" class="t5 form1" placeholder="Valor parcela">
+                <label for="Data1Parcela" class="labelRDom">⬐ Data 1ª parcela</label>
+                <input id="primeiraParcelaData" type="date" class="t5 form1" placeholder="">
+                <label for="total" class="labelRDom">⬐ Valor Total:</label>
+                <div id="valorTotalRDom"></div>
+                <button type="button" onclick="preencher()" class="btnsubback"></button>
+            </div>
+
+            <div id="btnsCenter">
+
+                <button type="button" onclick="abrirContratoReservaDominioPg1()" class="btnsubback">◄ RETORNAR</button>
+                <button type="submit" class="btnsubback"> GERAR <div
+                        style="font-size: 30px;margin-left: 10px;margin-bottom: 4px;">🛠
+                    </div></button>
+
+
+            </div>
 
         </div>
-        <div id="divProBtn">
-            <button class="btnsubback">PRÓXIMO ▶</button>
+    </form>
 
-        </div>
+
     </div>
     <!------------------------------------------------------------------------------------------------->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

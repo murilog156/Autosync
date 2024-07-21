@@ -1,55 +1,63 @@
 IDENTIFICAÇÃO DOS CAMPOS PARA USAR POSTERIORMENTE
 
-<!--PARTES-->
+
 credorNome
 cpfCredor
 rgCredor
 enderecoCredor
 cepCredor
 telefoneCredor
-
 devedorNome
 cpfDevedor
 rgDevedor
 enderecoDevedor
 cepDevedor
 telefoneDevedor
-
-<!--VEÍCULO-->
 marcaVeiculo
 placaVeiculo
 renavamVeiculo
 chassiVeiculo
 anoVeiculo
-
-<!--VENDA-->
-
-valorTotal
 valorEntrada
-valorFinanciado
 xParcelas
 valorParcelas
 primeiraParcela
 ultimaParcela
+valorFinanciado
+valorTotal
 formasPagamento
-
-
-<!--CLAUSULA1-->
-
 clausula1-total
-
-
-<!--CLAUSULA2-->
 clausula-entrada-valor
 clausula-financiado-valor
 clausula-parcelas-numero
 clausula-parcelas-valor
 clausula-data-primeira
 clausula-data-ultima
-
-<!--LOCAL E DATA-->
 loc-data-valor
-
-<!--ASSINATURAS-->
 credorAss
 devedorAss
+
+
+
+
+        credor
+        cpfCredor
+        rgCredor
+        endCredor
+        cepCredor
+        telefoneCredor
+        devedor
+        cpfDevedor
+        rgDevedor
+        endDevedor
+        cepDevedor
+        telefoneDevedor
+        marcaModelo
+        placa
+        renavam
+        chassi
+        ano
+        entrada
+        xParcelas
+        valorParcelas
+        dataPrimeiraParcela

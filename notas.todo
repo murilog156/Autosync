@@ -1,0 +1,63 @@
+{
+  "todotree": {
+    "tree": [
+      {
+        "key": 1721593726489,
+        "children": [],
+        "todo": {
+          "content": "Formatar campos para valores para R$ BRL",
+          "id": 1721593726489,
+          "level": "warning",
+          "done": false,
+          "start": 1721593726489
+        }
+      },
+      {
+        "key": 1721593768417,
+        "children": [],
+        "todo": {
+          "content": "Formatar campos CPF para pontuação automática XXX.XXX.XXX-XX",
+          "id": 1721593768417,
+          "level": "default",
+          "done": false,
+          "start": 1721593768417
+        }
+      },
+      {
+        "key": 1721593815397,
+        "children": [],
+        "todo": {
+          "content": "Realizar funcao aritmética para calcular o campo \"Valor Financiado\"",
+          "id": 1721593815397,
+          "level": "warning",
+          "done": false,
+          "start": 1721593815397
+        }
+      },
+      {
+        "key": 1721593855139,
+        "children": [],
+        "todo": {
+          "content": "Realizar funcao aritmética para calcular o vampo \"Valor total\"",
+          "id": 1721593855139,
+          "level": "warning",
+          "done": false,
+          "start": 1721593855139
+        }
+      }
+    ],
+    "expandKeys": [],
+    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
+    "add_mode": "bottom",
+    "virtual": false,
+    "timelines": [],
+    "showLine": false,
+    "playFontSize": 24,
+    "title": "notas",
+    "autoSort": false,
+    "showEndTime": false,
+    "simpleMode": false,
+    "lang": "en",
+    "version": "1721593971829"
+  }
+}
