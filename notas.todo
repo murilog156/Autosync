@@ -2,6 +2,17 @@
   "todotree": {
     "tree": [
       {
+        "key": 1721619938116,
+        "children": [],
+        "todo": {
+          "content": "Olhar aula sobre parâmetros de funções",
+          "id": 1721619938116,
+          "level": "danger",
+          "done": false,
+          "start": 1721619938116
+        }
+      },
+      {
         "key": 1721593726489,
         "children": [],
         "todo": {
@@ -27,7 +38,7 @@
         "key": 1721593815397,
         "children": [],
         "todo": {
-          "content": "Realizar funcao aritmética para calcular o campo \"Valor Financiado\"",
+          "content": "Realizar calculo aritmética para calcular o campo \"Valor Financiado\"",
           "id": 1721593815397,
           "level": "warning",
           "done": false,
@@ -58,6 +69,6 @@
     "showEndTime": false,
     "simpleMode": false,
     "lang": "en",
-    "version": "1721593971829"
+    "version": "1721619955215"
   }
 }

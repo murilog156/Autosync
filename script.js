@@ -1,6 +1,4 @@
 let menuAbertoAtual = null;
-
-
 const formPrincipal = document.getElementById("encaixotei")
 const cxInfisico = document.getElementById("caixa-dos-inputs-fisicos")
 const cxInjuridico = document.getElementById("caixa-dos-inputs-juridicos")
@@ -10,10 +8,8 @@ const cxContrSType = document.getElementById("contractSelectType")
 const cxContratoRDom = document.getElementById("inputBoxContratoResDom")
 const cxRDomPartes = document.getElementById("inputBoxPartes")
 const cxRDomVeVe = document.getElementById("inputBoxVeiculoEVenda")
-
 cxContratoRDom.addEventListener("submit", gerarContratoAlienacaoFiduciaria)
 formPrincipal.addEventListener("submit", gerarProc)
-
 function clean() {
     document.getElementById('procPfInput1').value = ""
     document.getElementById('procPfInput2').value = ""
@@ -71,7 +67,6 @@ function preencher() {
 
     }
 }
-
 function esconderProcSelecType(tipoproc) {
 
 
@@ -135,28 +130,6 @@ function gerarProcPf() {
         proprietarioCpf: document.getElementById('procPfInput2').value,
         procurador1: document.getElementById('procPfInput3').value,
         cpfproc1: document.getElementById('procPfInput4').value,
-        placa: document.getElementById('placa').value,
-        renavam: document.getElementById('rnvvei').value,
-        marcamodelo: document.getElementById('marmodvei').value,
-        chassi: document.getElementById('chassi1').value,
-        anoveiculo: document.getElementById('anoveiculo').value,
-        cor: document.getElementById('corveiculo').value,
-        proc2TF: false,
-        MAA: 'geradorDeProcuracao'
-    };
-
-    window.open(`./docsaida.html?MAA=${DadosProcPf.MAA}&proc2TF=${DadosProcPf.proc2TF}&proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}&marcamodelo=${DadosProcPf.marcamodelo}&chassi=${DadosProcPf.chassi}&anoveiculo=${DadosProcPf.anoveiculo}&cor=${DadosProcPf.cor}`)
-
-
-}
-function gerarProcPf2() {
-
-    const DadosProcPf = {
-
-        proprietario: document.getElementById('procPfInput1').value,
-        proprietarioCpf: document.getElementById('procPfInput2').value,
-        procurador1: document.getElementById('procPfInput3').value,
-        cpfproc1: document.getElementById('procPfInput4').value,
         procurador2: document.getElementById('procPfInput5').value,
         cpfproc2: document.getElementById('procPfInput6').value,
         placa: document.getElementById('placa').value,
@@ -165,38 +138,19 @@ function gerarProcPf2() {
         chassi: document.getElementById('chassi1').value,
         anoveiculo: document.getElementById('anoveiculo').value,
         cor: document.getElementById('corveiculo').value,
-        proc2TF: true,
         MAA: 'geradorDeProcuracao'
     };
 
-    window.open(`./docsaida.html?MAA=${DadosProcPf.MAA}&proc2TF=${DadosProcPf.proc2TF}&proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&procurador2=${DadosProcPf.procurador2}&cpfproc2=${DadosProcPf.cpfproc2}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
+    window.open(`./docsaida.html?MAA=${DadosProcPf.MAA}&proprietario=${DadosProcPf.proprietario}&proprietarioCpf=${DadosProcPf.proprietarioCpf}&procurador1=${DadosProcPf.procurador1}&cpfproc1=${DadosProcPf.cpfproc1}&procurador2=${DadosProcPf.procurador2}&cpfproc2=${DadosProcPf.cpfproc2}&placa=${DadosProcPf.placa}&renavam=${DadosProcPf.renavam}
         &marcamodelo=${DadosProcPf.marcamodelo}&chassi=${DadosProcPf.chassi}&anoveiculo=${DadosProcPf.anoveiculo}&cor=${DadosProcPf.cor}`)
-    console.log(DadosProcPf)
+
 
 }
 function gerarProc(evento1) {
-
-    const procurador2 = document.getElementById('procPfInput5').value;
-    const cpfproc2 = document.getElementById('procPfInput6').value;
-    let temValor = procurador2 !== '' && cpfproc2 !== '';
     evento1.preventDefault()
-
-    // if (evento1 != null) {
-
-    //     evento1.preventDefault()
-
-    if (menuAbertoAtual == "gerador-procuracao-fisica" && temValor == false) {
+    if (menuAbertoAtual == "gerador-procuracao-fisica") {
         gerarProcPf()
-        console.log(temValor)
     }
-    if (menuAbertoAtual == "gerador-procuracao-fisica" && temValor == true) {
-        gerarProcPf2()
-        console.log(temValor)
-    }
-    // else if (menuAbertoAtual == "gerador-procuracao-juridica") {
-    //     gerarProcPj()
-    // }
-
 }
 function openContratos() {
 
@@ -266,10 +220,9 @@ function gerarContratoAlienacaoFiduciaria(event1) {
     };
 
     window.open(`./docsaida.html?MAA=${dadosContratoRDom.MAA}&credor1=${dadosContratoRDom.credor1}&cpfCredor1=${dadosContratoRDom.cpfCredor1}&rgCredor1=${dadosContratoRDom.rgCredor1}&endCredor1=${dadosContratoRDom.endCredor1}&cepCredor1=${dadosContratoRDom.cepCredor1}&telCredor1=${dadosContratoRDom.telCredor1}&devedor1=${dadosContratoRDom.devedor1}&cpfDevedor1=${dadosContratoRDom.cpfDevedor1}&rgDevedor1=${dadosContratoRDom.rgDevedor1}&endDevedor1=${dadosContratoRDom.endDevedor1}&cepDevedor1=${dadosContratoRDom.cepDevedor1}&telDevedor1=${dadosContratoRDom.telDevedor1}&marcaModelo=${dadosContratoRDom.marcaModelo}&placa=${dadosContratoRDom.placa}&renavam=${dadosContratoRDom.renavam}&chassi=${dadosContratoRDom.chassi}&anoFabMod=${dadosContratoRDom.anoFabMod}&valorEntrada=${dadosContratoRDom.valorEntrada}&xParcelas=${dadosContratoRDom.xParcelas}&vlrParcelas=${dadosContratoRDom.vlrParcelas}`)
-
-
 }
-
-
-
-
+function calcularValorParcelas(valorParcela, qtdParcelas) {
+    let valorFinal = 0; // 
+    valorFinal = qtdParcelas * valorParcela;
+    return valorFinal;
+}
