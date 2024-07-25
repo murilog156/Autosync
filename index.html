@@ -39,14 +39,14 @@
     <div id="procSelectType" class="testet" onmouseenter="openProcSelecType()" onmouseleave="fecharGuia()">
         Selecione o tipo de procuração:
         <button class="btnsubmit" onclick="esconderProcSelecType('fisica')"> Pessoa física</button>
-        <button class="btnsubmit" onclick="esconderProcSelecType('juridica')"> Pessoa jurídica</button>
-        <button class="btnsubmit"> Procuração avançada</button>
+        <button class="btnClose" onclick=""> Pessoa jurídica (em breve)</button>
+        <button class="btnClose"> Proc. avançada (em breve)</button>
 
     </div>
 
     <div id="contractSelectType" class="testet" onmouseenter="openContratos()" onmouseleave="fecharGuia()">
         Selecione o tipo de contrato:
-        <button onclick="abrirContratoReservaDominioPg1()" class="btnsubmit"> Alienação Fiduciária</button>
+        <button onclick="abrirContratoAlienacaoFiduciaria('pg1')" class="btnsubmit"> Alienação Fiduciária</button>
     </div>
 
 
@@ -183,7 +183,7 @@
                 <label class="labelRDom" for="telDevedor">Telefone Comprador ↴</label>
                 <input id="telDevedor1" name="telDevedor" class="t1 form1" type="text" placeholder="Telefone (DDD)">
             </div>
-            <button type="button" onclick="abrirContratoReservaDominioPg2()" id="btnProx">PRÓXIMO ▶</button>
+            <button type="button" onclick="abrirContratoAlienacaoFiduciaria('pg2')" id="btnProx">PRÓXIMO ▶</button>
 
 
 
@@ -208,7 +208,8 @@
                 <label class="labelRDom" for="entrada">⬐ Valor de entrada</label>
                 <input id="vlrEntrada" name="entrada" type="number" class="t5 form1" placeholder="Entrada R$">
                 <label class="labelRDom" for="xParcelas">⬐ Número de parcelas</label>
-                <input id="xParcelas1" name="xParcelas" type="number" class="t5 form1" placeholder="X Parcelas">
+                <input required id="xParcelas1" name="xParcelas" type="number" class="t5 form1"
+                    placeholder="x Parcelas">
                 <label for="valorParcelas" class="labelRDom">⬐ Valor das parcelas</label>
                 <input id="vlrParcelas" type="number" name="valorParcelas" class="t5 form1" placeholder="Valor parcela">
                 <label for="Data1Parcela" class="labelRDom">⬐ Data 1ª parcela</label>
@@ -220,7 +221,8 @@
 
             <div id="btnsCenter">
 
-                <button type="button" onclick="abrirContratoReservaDominioPg1()" class="btnsubback">◄ RETORNAR</button>
+                <button type="button" onclick="abrirContratoAlienacaoFiduciaria('pg1')" class="btnsubback">◄
+                    RETORNAR</button>
                 <button type="submit" class="btnsubback"> GERAR <div
                         style="font-size: 30px;margin-left: 10px;margin-bottom: 4px;">🛠
                     </div></button>
@@ -236,7 +238,9 @@
     <!------------------------------------------------------------------------------------------------->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="script.js"></script>
+    <script src="/SCRIPTS/script.js"></script>
+    <script src="SCRIPTS/contratoAlienacao.js"></script>
+
 </body>
 
 </html>
