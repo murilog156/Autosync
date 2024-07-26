@@ -5,7 +5,7 @@ const cxInjuridico = document.getElementById("caixa-dos-inputs-juridicos")
 const cxInGrandes = document.getElementById("caixa-dos-inputs-grande")
 const cxProcSType = document.getElementById("procSelectType")
 
-// formPrincipal.addEventListener("submit", gerarProc)
+formPrincipal.addEventListener("submit", gerarProc)
 function clean() {
     document.getElementById('procPfInput1').value = ""
     document.getElementById('procPfInput2').value = ""
