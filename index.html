@@ -2,245 +2,29 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/media/favicon.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fontes usadas na tela principal (Noto Sans Display) e nos documentos gerados (Poppins e Roboto) -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/media/favicon.png">
-    <link rel="stylesheet" href="./CSS/reset.css">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AutoSync</title>
 </head>
 
 <body>
+    <div id="root"></div>
 
-
-    <div class="topbar">
-
-        <img id="logo1" src="media/logo1.png" width="300" height="90">
-        <img id="logo2" src="media/logo2.png" width="300" height="90">
-    </div>
-
-    <nav class="sidebar">
-
-        <button onmouseenter="openProcSelecType()" onmouseleave="fecharTodosMenus()" class="btnside">Gerador de
-            procuração</button>
-
-        <button onmouseenter="openContratos()" onmouseleave="fecharTodosMenus()" class="btnside">Contratos</button>
-        <button class="btnside">Outros Documentos</button>
-        <button class="btnside">Consulta CPF</button>
-    </nav>
-
-    <div id="procSelectType" class="testet" onmouseenter="openProcSelecType()" onmouseleave="fecharGuia()">
-        Selecione o tipo de procuração:
-        <button class="btnsubmit" onclick="esconderProcSelecType('fisica')"> Pessoa física</button>
-        <button class="btnClose" onclick=""> Pessoa jurídica (em breve)</button>
-        <button class="btnClose"> Proc. avançada (em breve)</button>
-
-    </div>
-
-    <div id="contractSelectType" class="testet" onmouseenter="openContratos()" onmouseleave="fecharGuia()">
-        Selecione o tipo de contrato:
-        <button onclick="abrirContratoAlienacaoFiduciaria('pg1')" class="btnsubmit"> Alienação Fiduciária</button>
-    </div>
-
-
-    <div class="inputboxprocfisica" id="caixa-dos-inputs-grande">
-
-        <form onsubmit="gerarProc()" id="encaixotei">
-
-            <div class="rcbform">
-                <div class="caixainput1" id="caixa-dos-inputs-juridicos">
-
-                    <label id="teste30" for="prop">Razão Social</label>
-                    <input style="text-transform: uppercase;" name="razaoSocial" id="procPjInput1" class="t1 form1"
-                        type="text" placeholder=" Proprietário Razão social">
-
-                    <label for="cnpj">CNPJ</label>
-                    <input style="text-transform: uppercase;" maxlength="18" name="cnpj" id="procPjInput2"
-                        class="t2 form1" type="text" placeholder="xx.xxx.xxx/xxxx-xx">
-                </div>
-                <div class="caixainput1" id="caixa-dos-inputs-fisicos">
-
-                    <label for="prop">Proprietário</label>
-                    <input style="text-transform: uppercase;" required name="Proprietario" id="procPfInput1"
-                        class="t1 form1" type="text" placeholder=" Proprietário">
-
-                    <label for="cpf">CPF Proprietário</label>
-                    <input required id="procPfInput2" minlength="11" maxlength="14" name="cpf" id="cpf" class="t2 form1"
-                        type="text" placeholder="xxx.xxx.xxx-xx">
-                </div>
-                <div class="caixainput1">
-                    <label for="proc1">Procurador 1</label>
-                    <input style="text-transform: uppercase;" required id="procPfInput3" class="t1 form1" type="text"
-                        placeholder=" Procurador 1">
-
-                    <label for="cpf1">CPF</label>
-                    <input required id="procPfInput4" maxlength="14" name="cpf1" class="t2 form1" type="text"
-                        placeholder="xxx.xxx.xxx-xx">
-                </div>
-                <div class="caixainput1">
-
-                    <label for="proc2">Procurador 2</label>
-                    <input style="text-transform: uppercase;" id="procPfInput5" class="t1 form1" type="text"
-                        placeholder=" Procurador 2">
-
-                    <label for="cpf2">CPF</label>
-                    <input maxlength="14" name="cpf2" id="procPfInput6" class="t2 form1" type="text"
-                        placeholder="xxx.xxx.xxx-xx">
-                </div>
-            </div>
-            <div class="rcbform2">
-
-                <div class="caixainput2">
-                    <label for="placa">Placa</label>
-                    <input required style="text-transform: uppercase;" minlength="7" maxlength="7" id="placa"
-                        name="placa" class="t3 form2" type="text" placeholder=" XYZ1B34">
-
-                    <label for="rnvvei">Renavam</label>
-                    <input required minlength="9" maxlength="11" name="rnvvei" id="rnvvei" class="t3 form2" type="text"
-                        placeholder="123456789">
-
-                    <label for="modvei">Marca / Modelo</label>
-                    <input required maxlength="24" id="marmodvei" class="t3 form2" type="text" placeholder=" Marca Mod">
-
-                    <label for="cpf1">Chassi</label>
-                    <input required style="text-transform: uppercase;" minlength="10" maxlength="17" name="cpf1"
-                        id="chassi1" class="t3 form2" type="text" placeholder="EX: 9BGK348V0JF153530">
-
-                    <label for="Anovei">Ano fab / Ano mod</label>
-                    <input required minlength="8" maxlength="10" id="anoveiculo" class="t3 form2" type="text"
-                        placeholder=" Ano fab / Ano mod" required>
-
-                    <label for="cor">Cor</label>
-                    <input required style="text-transform: uppercase;" maxlength="12" name="cor" id="corveiculo"
-                        class="t3 form2" type="text" placeholder="Ex: Branco" required>
-                </div>
-            </div>
-            <div id="footbtn">
-
-
-                <button type="button" onclick="retornaProcSelecType()" class="btnsubback">
-                    <div id="separador2">
-                        <ion-icon size=large ; name="arrow-undo-outline"></ion-icon>
-                        Voltar
-                    </div>
-                </button>
-                <button class="btnsubback" type="button" onclick="preencher()">PREENCHER</button>
-                <button class="btnsubback" type="button" onclick="clean()">LIMPAR</button>
-                <button type="submit" class="btnsubback">
-                    <div id="separador1">
-                        <ion-icon size=large ; name="cloud-download-outline"></ion-icon>
-                        Gerar
-                    </div>
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-
-
-    <form onsubmit="gerarContratoAlienacaoFiduciaria()" class="inputBoxContratoResDomCSS" id="inputBoxContratoResDom">
-        <h1 id="tituloRDom">CONTRATO DE ALIENAÇÃO FIDUCIÁRIA ✎</h1>
-
-        <div id="inputBoxPartes">
-            <div id="credorRdom">
-                <label class="labelRDom" for="credor">Vendedor ↴</label>
-                <input id="credor1" name="credor" class="t1 form1" type="text" placeholder="Nome completo">
-                <label class="labelRDom" for="cpfCredor">CPF Vendedor ↴</label>
-                <input id="cpfCredor1" maxlength="14" minlength="11" name="cpfCredor" class="t1 form1" type="text"
-                    placeholder="CPF Vendedor">
-                <label class="labelRDom" for="rgCredor">RG Vendedor ↴</label>
-                <input id="rgCredor1" name="rgCredor" class="t1 form1" type="text" placeholder="RG Vendedor">
-                <label class="labelRDom" for="endCredor">Endereço completo ↴</label>
-                <input id="endCredor1" name="endCredor" class="t1 form1" type="text" placeholder="Endereço completo">
-                <label class="labelRDom" for="cepCredor">CEP Vendedor ↴</label>
-                <input id="cepCredor1" name="cepCredor" class="t1 form1" type="text" placeholder="CEP">
-                <label class="labelRDom" for="telCredor">Telefone Vendedor ↴</label>
-                <input id="telCredor1" name="telCredor" class="t1 form1" type="text" placeholder="Telefone (DDD)">
-
-            </div>
-            <div id="devedorRdom">
-                <label class="labelRDom" for="devedor">Comprador ↴</label>
-                <input id="devedor1" name="devedor" class="t1 form1" type="text" placeholder="Nome completo">
-                <label class="labelRDom" for="cpfDevedor">CPF Comprador ↴</label>
-                <input id="cpfDevedor1" maxlength="14" minlength="11" name="cpfDevedor" class="t1 form1" type="text"
-                    placeholder="CPF Comprador">
-                <label class="labelRDom" for="rgDevedor">RG Comprador ↴</label>
-                <input id="rgDevedor1" name="rgDevedor" class="t1 form1" type="text" placeholder="RG Comprador">
-                <label class="labelRDom" for="endDevedor">Endereço completo ↴</label>
-                <input id="endDevedor1" name="endDevedor" class="t1 form1" type="text" placeholder="Endereço completo">
-                <label class="labelRDom" for="cepDevedor">CEP Comprador ↴</label>
-                <input id="cepDevedor1" name="cepDevedor" class="t1 form1" type="text" placeholder="CEP">
-                <label class="labelRDom" for="telDevedor">Telefone Comprador ↴</label>
-                <input id="telDevedor1" name="telDevedor" class="t1 form1" type="text" placeholder="Telefone (DDD)">
-            </div>
-            <button type="button" onclick="abrirContratoAlienacaoFiduciaria('pg2')" id="btnProx">PRÓXIMO ▶</button>
-
-
-
-        </div>
-
-        <div id="inputBoxVeiculoEVenda">
-            <div id="veiculoRDom">
-                <label class="labelRDom" for="marcaMod">Marca/Modelo ↴</label>
-                <input id="MaMod" name="marcaMod" class="t1 form1" type="text" placeholder="Marca/Modelo">
-                <label class="labelRDom" for="placa">Placa ↴</label>
-                <input id="placa1" name="placa" class="t1 form1" type="text" placeholder="Placa">
-                <label class="labelRDom" for="renavam">Revavam ↴</label>
-                <input id="renavam1" name="renavam" class="t1 form1" type="text" placeholder="123456789">
-                <label class="labelRDom" for="chassi">Chassi ↴</label>
-                <input id="chassi2" name="chassi" class="t1 form1" type="text" placeholder="EX: aaaaaaaaaaaa">
-                <label class="labelRDom" for="anoMod">Ano/Mod ↴</label>
-                <input id="anoFabMod" name="AnoMod" class="t1 form1" type="text" placeholder="Ano/Mod">
-
-            </div>
-            <div id="vendaRDom">
-
-                <label class="labelRDom" for="entrada">⬐ Valor de entrada</label>
-                <input id="vlrEntrada" name="entrada" type="number" class="t5 form1" placeholder="Entrada R$">
-                <label class="labelRDom" for="xParcelas">⬐ Número de parcelas</label>
-                <input required id="xParcelas1" name="xParcelas" type="number" class="t5 form1"
-                    placeholder="x Parcelas">
-                <label for="valorParcelas" class="labelRDom">⬐ Valor das parcelas</label>
-                <input id="vlrParcelas" type="number" name="valorParcelas" class="t5 form1" placeholder="Valor parcela">
-                <label for="Data1Parcela" class="labelRDom">⬐ Data 1ª parcela</label>
-                <input id="primeiraParcelaData" type="date" class="t5 form1" placeholder="">
-                <label for="total" class="labelRDom">⬐ Valor Total:</label>
-                <div id="valorTotalRDom"></div>
-                <button type="button" onclick="preencher()" class="btnsubback"></button>
-            </div>
-
-            <div id="btnsCenter">
-
-                <button type="button" onclick="abrirContratoAlienacaoFiduciaria('pg1')" class="btnsubback">◄
-                    RETORNAR</button>
-                <button type="submit" class="btnsubback"> GERAR <div
-                        style="font-size: 30px;margin-left: 10px;margin-bottom: 4px;">🛠
-                    </div></button>
-
-
-            </div>
-
-        </div>
-    </form>
-
-
-    </div>
-    <!------------------------------------------------------------------------------------------------->
+    <!-- Ícones <ion-icon> usados nos botões -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/SCRIPTS/script.js"></script>
-    <script src="SCRIPTS/contratoAlienacao.js"></script>
 
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>

@@ -1,0 +1,148 @@
+/* Estilos do contrato de alienação fiduciária (antigo <style> do RESERVADOMINIO.html) */
+
+:root {
+    --font-size: 20px;
+    --gap: 8.05px;
+    --font-family: "Poppins", sans-serif;
+}
+
+#marginCSS {
+    height: 100%;
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-rDom {
+    display: flex;
+    height: 100%;
+    width: 800px;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    gap: var(--gap);
+}
+
+#tituloRDom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box-devedor,
+#box-credor {
+    background-color: rgba(0, 255, 255, 0.438);
+    width: 100%;
+    font-size: var(--font-size);
+}
+
+#box-veiculo {
+    width: 50%;
+    font-size: var(--font-size);
+}
+
+#box-venda {
+    font-size: var(--font-size);
+}
+
+#parcelasCSS {
+    display: flex;
+    flex-direction: row;
+}
+
+.titulos-formato {
+    font-weight: 500;
+    display: flex;
+}
+
+#texto1,
+#texto2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size);
+}
+
+#clausula1,
+#clausula2,
+#clausula3,
+#clausula4,
+#clausula5,
+#clausula6,
+#clausula7 {
+    font-size: var(--font-size);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+.titulos-clausulas {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#divClau,
+#box-infos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.titulos-partes {
+    display: flex;
+    width: 30%;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+#assinaturas {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 290px;
+    margin-top: 10px;
+    gap: 70px;
+}
+
+#loc-data {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#align1,
+#align2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    font-family: "Roboto", sans-serif;
+}
+
+#box-credor,
+#box-devedor,
+#box-veiculo,
+#box-venda {
+    margin-left: 20px;
+}
+
+.clausula {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    line-height: 1.6;
+}
+
+.fonte-info-saida {
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    align-self: center;
+    justify-self: end;
+}
