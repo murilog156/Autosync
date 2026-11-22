@@ -1,2 +1,6 @@
 node_modules/
 dist/
+
+# Variáveis de ambiente locais (chaves do Supabase etc.)
+.env.local
+.env.*.local

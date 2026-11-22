@@ -34,6 +34,46 @@ rcbform = caixa que recebe o formulário
 }
 
 
+.topbar-usuario {
+
+    margin-left: auto;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: "Noto Sans Display";
+}
+
+.topbar-nome {
+
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+.topbar-botao {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 18px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: rgb(255, 255, 255);
+    font-family: "Noto Sans Display";
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.topbar-botao:hover {
+
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
 #logo1 {
 
     margin-left: 20px;
