@@ -181,20 +181,17 @@ body {
     border-color: rgb(255, 255, 255);
     border-width: 1px;
     border-style: none none solid none;
+    transition: background-color 300ms, color 300ms, border-color 300ms;
 
 }
 
+/* Ao passar o mouse só muda a cor (o botão não muda de tamanho,
+   para o texto não "pular" de lugar) */
 .btnside:hover {
 
-    transition: all;
     background-color: rgb(238, 238, 238);
     color: rgb(0, 0, 0);
-    transition-duration: 300ms;
-    border-style: none none solid none;
     border-color: rgba(0, 0, 0, 0.171);
-    border-width: 1px;
-    width: 110%;
-    border-radius: 10px;
 
 }
 
