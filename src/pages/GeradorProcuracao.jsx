@@ -635,7 +635,7 @@ export default function GeradorProcuracao() {
                 />
                 <span>
                   <strong>Procuração de amplos poderes</strong>
-                  <small>Inclui todos os 12 poderes da lista abaixo.</small>
+                  <small>Inclui todos os {PODERES.length} poderes da lista abaixo.</small>
                 </span>
               </label>
               <label className={`pn-modo ${poderes.modo === 'especificos' ? 'ativa' : ''}`}>
