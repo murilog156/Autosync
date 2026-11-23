@@ -364,3 +364,43 @@ body:has(.perfil) {
     opacity: 0.6;
     cursor: wait;
 }
+
+/* 16 px nos campos evita que o iPhone dê zoom ao tocar */
+@media (max-width: 768px) {
+    .pf-campo input,
+    .pf-campo select {
+        font-size: 16px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 375px) {
+    .pf-topo {
+        padding: 10px 12px;
+    }
+
+    .pf-voltar {
+        font-size: 14px;
+    }
+
+    .pf-logo {
+        height: 32px;
+    }
+
+    .pf-conteudo {
+        padding: 24px 12px 48px;
+    }
+
+    .pf-cep {
+        flex-wrap: wrap;
+    }
+
+    .pf-cep .pf-botao-secundario,
+    .pf-logo-previa {
+        width: 100%;
+    }
+
+    .pf-botao-secundario {
+        justify-content: center;
+    }
+}

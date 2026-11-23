@@ -16,12 +16,14 @@
     --pn-ok: #1f7a3d;
     --pn-ok-fundo: #e8f5ec;
 
-    position: absolute;
-    top: 120px;
-    left: calc(10% + 60px);
-    right: 32px;
-    bottom: 20px;
+    /* Ocupa a área de conteúdo da tela principal (.app-conteudo), com largura
+       máxima para não esticar demais em monitores grandes; rola por dentro. */
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
     overflow-y: auto;
+    overscroll-behavior: contain;
     background: rgba(255, 255, 255, 0.97);
     border: 1px solid var(--pn-borda);
     border-radius: 18px;
@@ -588,6 +590,78 @@
     }
 }
 
+/* Celular e tablet */
+@media (max-width: 768px) {
+    .painel {
+        border-radius: 14px;
+    }
+
+    .pn-cabecalho {
+        padding: 16px 16px 14px;
+    }
+
+    .pn-cabecalho h1 {
+        font-size: 20px;
+    }
+
+    .pn-cabecalho p {
+        font-size: 13px;
+    }
+
+    .pn-etapas li {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .pn-secao {
+        gap: 14px;
+        padding: 18px 16px;
+    }
+
+    .pn-secao-colada {
+        padding-top: 0;
+    }
+
+    /* 16 px evita que o iPhone dê zoom ao tocar no campo */
+    .pn-campo input {
+        font-size: 16px;
+    }
+
+    .pn-procurador {
+        padding: 12px;
+    }
+
+    /* Rodapé: botões secundários lado a lado e o principal em largura total */
+    .pn-rodape {
+        gap: 10px;
+        padding: 12px 16px;
+    }
+
+    .pn-aviso {
+        width: 100%;
+    }
+
+    .pn-botoes {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .pn-botao {
+        flex: 1 1 0;
+        min-width: 0;
+        height: 44px;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+
+    .pn-botao-principal {
+        flex-basis: 100%;
+        order: 1;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 640px) {
     .pn-grade {
         grid-template-columns: 1fr;
@@ -597,11 +671,30 @@
         grid-column: auto;
     }
 
-    .pn-botoes {
-        width: 100%;
+    .pn-escolha {
+        display: flex;
+        align-self: stretch;
     }
 
-    .pn-botao {
-        flex: 1 1 auto;
+    .painel .pn-escolha label {
+        flex: 1 1 0;
+        justify-content: center;
+        padding: 10px 12px;
+    }
+
+    .pn-adicionar {
+        align-self: stretch;
+        justify-content: center;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 380px) {
+    .pn-botao ion-icon {
+        display: none;
+    }
+
+    .pn-botao-principal ion-icon {
+        display: inline-block;
     }
 }

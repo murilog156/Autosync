@@ -369,3 +369,34 @@ body:has(.landing) {
         padding: 24px 20px;
     }
 }
+
+/* 16 px nos campos evita que o iPhone dê zoom ao tocar */
+@media (max-width: 768px) {
+    .lp-campo input,
+    .lp-campo select {
+        font-size: 16px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 375px) {
+    .lp-apresentacao {
+        padding: 32px 16px;
+    }
+
+    .lp-acesso {
+        padding: 24px 12px 40px;
+    }
+
+    .lp-cartao {
+        padding: 20px 16px;
+    }
+}
+
+/* Ultrawide: centraliza o conteúdo do lado esquerdo em vez de deixá-lo preso no canto */
+@media (min-width: 1921px) {
+    .lp-apresentacao {
+        /* Coluna de ~640 px centralizada; o conteúdo continua alinhado à esquerda dentro dela */
+        padding-inline: max(96px, calc((100% - 640px) / 2));
+    }
+}
