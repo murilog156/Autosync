@@ -836,6 +836,11 @@ body {
     display: none;
 }
 
+.btnside-seta {
+
+    display: none;
+}
+
 .sidebar-grupo {
 
     position: relative;
@@ -1001,7 +1006,7 @@ body {
         padding: 64px 16px 24px;
         gap: 8px;
         overflow-y: auto;
-        background-color: hwb(29 18% 6%);
+        background-color: #fff;
         box-shadow: 8px 0 30px rgba(0, 0, 0, 0.25);
         transform: translateX(-105%);
         visibility: hidden;
@@ -1027,33 +1032,55 @@ body {
         padding: 0;
         border: 0;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.15);
-        color: #fff;
+        background: #f1ede9;
+        color: #2b2a2a;
         font-size: 28px;
     }
 
+    /* Botões laranja (sem o efeito de passar o mouse, que no toque fica "preso") */
     .sidebar .btnside,
     .sidebar .btnside:hover {
 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
         width: 100%;
         height: 60px;
+        border-radius: 10px;
+        background-color: rgb(247, 140, 58);
+        color: #fff;
         font-size: 19px;
     }
 
-    /* No menu deslizante o submenu fica sempre aberto, logo abaixo do botão */
+    .btnside-seta {
+
+        display: inline-block;
+        font-size: 20px;
+        transition: transform 200ms;
+    }
+
+    .btnside[aria-expanded="true"] .btnside-seta {
+
+        transform: rotate(180deg);
+    }
+
+    /* No menu deslizante o submenu fica recolhido embaixo do botão
+       e abre ao tocar em "Gerador Documentos" */
     .submenu {
 
         position: static;
-        display: flex;
         width: 100%;
         margin-top: 8px;
         padding: 12px;
-        background-color: rgba(255, 255, 255, 0.12);
+        background-color: #faf6f2;
+        border: 1px solid #ece5df;
         animation: none;
     }
 
     .submenu-titulo {
 
+        color: #6b6866;
         font-size: 16px;
     }
 

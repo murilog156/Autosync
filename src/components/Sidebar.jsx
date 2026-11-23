@@ -11,13 +11,21 @@ const DOCUMENTOS = [
 
 // Menu lateral. No computador: coluna fixa à esquerda, e o submenu abre ao lado
 // (passando o mouse ou clicando). No celular/tablet: menu deslizante ("aberto"),
-// com o submenu sempre visível embaixo do botão.
+// com o submenu recolhido; abre e fecha ao tocar em "Gerador Documentos".
+const MENU_DESLIZANTE = '(max-width: 768px)'
+const ehMenuDeslizante = () => window.matchMedia(MENU_DESLIZANTE).matches
+
 export default function Sidebar({ aberto, onFechar }) {
   const navigate = useNavigate()
   const [submenuAberto, setSubmenuAberto] = useState(false)
   const temporizador = useRef(null)
 
   useEffect(() => () => clearTimeout(temporizador.current), [])
+
+  // Ao fechar o menu deslizante, o submenu volta a ficar recolhido
+  useEffect(() => {
+    if (!aberto) setSubmenuAberto(false)
+  }, [aberto])
 
   // Tecla Esc fecha o menu deslizante
   useEffect(() => {
@@ -27,15 +35,25 @@ export default function Sidebar({ aberto, onFechar }) {
     return () => window.removeEventListener('keydown', aoTeclar)
   }, [aberto, onFechar])
 
-  // Fecha com um pequeno atraso para dar tempo de levar o mouse do botão até o submenu
-  function abrirSubmenu() {
+  // Computador: abre ao passar o mouse e fecha com um pequeno atraso, para dar
+  // tempo de levar o mouse do botão até o submenu. No celular o mouse é ignorado
+  // (o toque também dispara esses eventos e abriria/fecharia sem querer).
+  function entrarComMouse() {
+    if (ehMenuDeslizante()) return
     clearTimeout(temporizador.current)
     setSubmenuAberto(true)
   }
 
-  function fecharSubmenu() {
+  function sairComMouse() {
+    if (ehMenuDeslizante()) return
     clearTimeout(temporizador.current)
     temporizador.current = setTimeout(() => setSubmenuAberto(false), 200)
+  }
+
+  // Clique/toque: no celular abre e recolhe; no computador só abre
+  function clicarGerador() {
+    clearTimeout(temporizador.current)
+    setSubmenuAberto((atual) => (ehMenuDeslizante() ? !atual : true))
   }
 
   function irPara(caminho) {
@@ -55,15 +73,17 @@ export default function Sidebar({ aberto, onFechar }) {
           <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
         </button>
 
-        <div className="sidebar-grupo" onMouseEnter={abrirSubmenu} onMouseLeave={fecharSubmenu}>
+        <div className="sidebar-grupo" onMouseEnter={entrarComMouse} onMouseLeave={sairComMouse}>
           <button
             type="button"
             className="btnside"
             aria-haspopup="menu"
             aria-expanded={submenuAberto}
-            onClick={abrirSubmenu}
+            onClick={clicarGerador}
           >
             Gerador Documentos
+            {/* Setinha que indica abrir/recolher (só no menu deslizante) */}
+            <ion-icon class="btnside-seta" name="chevron-down-outline" aria-hidden="true"></ion-icon>
           </button>
 
           <div className={`submenu ${submenuAberto ? 'aberto' : ''}`} role="menu">
