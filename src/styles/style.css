@@ -183,6 +183,7 @@ label {
 
 body {
 
+    min-height: 100vh;
     background-image: url(/media/bck.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -756,4 +757,63 @@ body {
     height: 40px;
     border-radius: 10px;
 
+}
+
+/* ---------- Menu lateral: "Gerador Documentos" e seu submenu ---------- */
+
+.sidebar-grupo {
+
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submenu {
+
+    position: absolute;
+    top: 0;
+    left: calc(100% + 10px);
+    width: 230px;
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background-color: hwb(29 18% 6% / 0.92);
+    border: 2px solid var(--borderscolor);
+    border-radius: 10px;
+    color: rgba(240, 240, 240, 0.97);
+    font-family: "Noto Sans Display";
+    text-align: center;
+    animation: transitionSide 300ms ease forwards;
+    z-index: 5;
+}
+
+.submenu-titulo {
+
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.submenu .btnsubmit,
+.submenu .btnClose {
+
+    width: 100%;
+    height: 70px;
+    font-size: 20px;
+}
+
+.submenu .btnClose {
+
+    flex-direction: column;
+    gap: 2px;
+}
+
+.submenu .btnClose small {
+
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }

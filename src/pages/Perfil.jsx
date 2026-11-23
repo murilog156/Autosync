@@ -5,6 +5,7 @@ import { supabase } from '../lib/supabase.js'
 import { UFS } from '../data/ufs.js'
 import { formatarTelefone, PADRAO_TELEFONE } from '../utils/telefone.js'
 import { formatarCep, PADRAO_CEP, buscarEnderecoPorCep } from '../utils/cep.js'
+import LogoProcuracao from '../components/LogoProcuracao.jsx'
 import '../styles/perfil.css'
 
 // Lê os dados já salvos no perfil (user_metadata do Supabase).
@@ -238,6 +239,8 @@ export default function Perfil() {
             </button>
           </div>
         </form>
+
+        <LogoProcuracao usuarioId={usuario?.id} />
       </main>
     </div>
   )

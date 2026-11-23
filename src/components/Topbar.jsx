@@ -23,7 +23,7 @@ export default function Topbar() {
         {nome && <span className="topbar-nome">{nome}</span>}
         <Link to="/perfil" className="topbar-botao">
           <ion-icon name="settings-outline" aria-hidden="true"></ion-icon>
-          Profile
+          Perfil
         </Link>
         <button type="button" className="topbar-botao" onClick={sair}>
           <ion-icon name="log-out-outline" aria-hidden="true"></ion-icon>

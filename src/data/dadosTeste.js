@@ -1,18 +1,44 @@
 // Dados de teste usados pelo botão "PREENCHER" dos formulários.
 
+// Procuração: o proprietário muda conforme Pessoa Física / Pessoa Jurídica
 export const procuracaoTeste = {
-  proprietario: 'MURILO GRADEL SOUZA BRITO',
-  proprietarioCpf: '038.882.260-07',
-  procurador1: 'MARIO DUARTE SOUZA PEREIRA PINTO',
-  cpfproc1: '397.001.626-64',
-  procurador2: 'JECA TATU DO MATO FERRAZ BRAS',
-  cpfproc2: '038.882.260-07',
-  placa: 'JTV-6591',
-  renavam: '12345678935',
-  marcamodelo: 'Ferrari 456 GT',
-  chassi: '9BGKC9103292B3',
-  anoveiculo: '2010 - 2010',
-  cor: 'VERMELHO',
+  proprietarioFisica: {
+    nome: 'MURILO GRADEL SOUZA BRITO',
+    documento: '038.882.260-07',
+    rg: '1234567890',
+    endereco: 'RUA DAS FLORES, 123, CENTRO, PORTO ALEGRE/RS',
+    telefone: '(51) 99999-8888',
+  },
+  proprietarioJuridica: {
+    nome: 'AUTO CENTER EXEMPLO LTDA',
+    documento: '11.222.333/0001-81',
+    rg: '',
+    endereco: 'AV. BRASIL, 1500, SÃO JOÃO, PORTO ALEGRE/RS',
+    telefone: '(51) 3333-4444',
+  },
+  procuradores: [
+    {
+      nome: 'MARIO DUARTE SOUZA PEREIRA PINTO',
+      documento: '397.001.626-64',
+      rg: '9876543210',
+      endereco: 'RUA OSVALDO ARANHA, 45, NOVO HAMBURGO/RS',
+    },
+    {
+      nome: 'DESPACHANTE MODELO LTDA',
+      documento: '12.ABC.345/01DE-35',
+      rg: '',
+      endereco: '',
+    },
+  ],
+  veiculo: {
+    placa: 'JTV-6591',
+    renavam: '12345678935',
+    marcaModelo: 'FERRARI 456 GT',
+    chassi: '9BGKC9103292B3',
+    anoFabricacao: '2010',
+    anoModelo: '2010',
+    cor: 'VERMELHO',
+  },
 }
 
 export const contratoAlienacaoTeste = {

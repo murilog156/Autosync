@@ -1,0 +1,607 @@
+/* Painel de conteúdo da tela principal (gerador de procuração, consulta de CPF...).
+   Tudo fica dentro de .painel para não herdar o "label { ... }" e o
+   "::placeholder" globais do style.css / reset.css. */
+
+.painel {
+    --pn-laranja: #f38735;
+    --pn-laranja-escuro: #d9701f;
+    --pn-laranja-claro: #fff4ec;
+    --pn-texto: #2b2a2a;
+    --pn-texto-suave: #6b6866;
+    --pn-borda: #e4dfdb;
+    --pn-fundo-campo: #fff;
+    --pn-travado: #f4f1ee;
+    --pn-erro: #d92d20;
+    --pn-erro-fundo: #fdecea;
+    --pn-ok: #1f7a3d;
+    --pn-ok-fundo: #e8f5ec;
+
+    position: absolute;
+    top: 120px;
+    left: calc(10% + 60px);
+    right: 32px;
+    bottom: 20px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid var(--pn-borda);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    color: var(--pn-texto);
+    font-family: "Noto Sans Display", system-ui, sans-serif;
+    line-height: 1.4;
+    animation: transicao-lenta 300ms;
+}
+
+.painel *,
+.painel *::before,
+.painel *::after {
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.painel ::placeholder {
+    font-size: inherit;
+    color: #a8a29e;
+}
+
+.painel h1,
+.painel h2,
+.painel h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.pn-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px clamp(20px, 3vw, 36px) 18px;
+    border-bottom: 1px solid var(--pn-borda);
+}
+
+.pn-cabecalho h1 {
+    font-size: 24px;
+}
+
+.pn-cabecalho p {
+    margin-top: 4px;
+    color: var(--pn-texto-suave);
+    font-size: 15px;
+}
+
+.pn-etapas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pn-etapas li {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid var(--pn-borda);
+    color: var(--pn-texto-suave);
+    font-weight: 600;
+}
+
+.pn-etapas li.atual {
+    border-color: var(--pn-laranja);
+    background: var(--pn-laranja);
+    color: #fff;
+}
+
+.pn-etapas li.feita {
+    border-color: var(--pn-laranja);
+    color: var(--pn-laranja-escuro);
+}
+
+/* ---------- Seções ---------- */
+
+.pn-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.pn-travavel {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: opacity 200ms;
+}
+
+.pn-travavel:disabled {
+    opacity: 0.55;
+}
+
+.pn-secao {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px clamp(20px, 3vw, 36px);
+}
+
+.pn-secao + .pn-secao,
+.pn-travavel .pn-secao + .pn-secao {
+    border-top: 1px solid var(--pn-borda);
+}
+
+.pn-secao-colada {
+    padding-top: 0;
+}
+
+.pn-secao h2 {
+    font-size: 18px;
+}
+
+.pn-grade {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px 16px;
+}
+
+.pn-col-2 {
+    grid-column: span 2;
+}
+
+.pn-col-linha {
+    grid-column: 1 / -1;
+}
+
+/* ---------- Campos ---------- */
+
+.pn-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+/* ".painel" na frente para vencer o "label { ... }" global do style.css */
+.painel .pn-campo label {
+    margin: 0;
+    color: var(--pn-texto);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pn-obrigatorio {
+    color: var(--pn-erro);
+}
+
+.pn-campo input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--pn-borda);
+    border-radius: 10px;
+    background-color: var(--pn-fundo-campo);
+    color: var(--pn-texto);
+    font-size: 15px;
+    transition: border-color 150ms, box-shadow 150ms;
+}
+
+.pn-campo input:focus {
+    outline: none;
+    border-color: var(--pn-laranja);
+    box-shadow: 0 0 0 3px rgba(243, 135, 53, 0.2);
+}
+
+.pn-campo input:disabled {
+    background-color: var(--pn-travado);
+    cursor: not-allowed;
+}
+
+/* Campo obrigatório vazio ou com valor inválido */
+.painel .pn-campo input.pn-invalido {
+    border-color: var(--pn-erro);
+    box-shadow: 0 0 0 1px var(--pn-erro);
+}
+
+.painel .pn-campo input.pn-invalido:focus {
+    box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.2);
+}
+
+.pn-erro-texto {
+    color: var(--pn-erro);
+    font-size: 13px;
+}
+
+.pn-contador {
+    align-self: flex-end;
+    color: var(--pn-texto-suave);
+    font-size: 12px;
+}
+
+.pn-dica {
+    margin: 0;
+    color: var(--pn-texto-suave);
+    font-size: 14px;
+}
+
+.pn-dica-erro {
+    color: var(--pn-erro);
+}
+
+/* ---------- Escolhas (rádio em formato de botão) ---------- */
+
+.pn-escolha {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-self: flex-start;
+    padding: 4px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+}
+
+.pn-escolha.pn-invalido {
+    border-color: var(--pn-erro);
+    box-shadow: 0 0 0 1px var(--pn-erro);
+}
+
+.painel .pn-escolha label,
+.painel .pn-modo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 10px 18px;
+    border: 1px solid var(--pn-borda);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--pn-texto);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 150ms, background 150ms;
+}
+
+.painel .pn-escolha label:hover,
+.painel .pn-modo:hover {
+    border-color: #d3ccc6;
+}
+
+.painel .pn-escolha label.ativa,
+.painel .pn-modo.ativa {
+    border-color: var(--pn-laranja);
+    background: var(--pn-laranja-claro);
+}
+
+.painel input[type="radio"],
+.painel input[type="checkbox"] {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--pn-laranja);
+    cursor: pointer;
+}
+
+/* ---------- Procuradores ---------- */
+
+.pn-procurador {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--pn-borda);
+    border-radius: 14px;
+    background: #fcfbfa;
+}
+
+.pn-procurador-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pn-procurador-topo h3 {
+    font-size: 15px;
+}
+
+.pn-remover,
+.pn-adicionar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 150ms;
+}
+
+.pn-remover {
+    padding: 6px 10px;
+    border: 0;
+    background: transparent;
+    color: var(--pn-erro);
+}
+
+.pn-remover:hover {
+    background: var(--pn-erro-fundo);
+}
+
+.pn-adicionar {
+    align-self: flex-start;
+    height: 42px;
+    padding: 0 16px;
+    border: 1px dashed var(--pn-laranja);
+    background: #fff;
+    color: var(--pn-laranja-escuro);
+}
+
+.pn-adicionar ion-icon {
+    font-size: 20px;
+}
+
+.pn-adicionar:hover:not(:disabled) {
+    background: var(--pn-laranja-claro);
+}
+
+.pn-adicionar:disabled {
+    border-color: var(--pn-borda);
+    color: var(--pn-texto-suave);
+    cursor: not-allowed;
+}
+
+/* ---------- Etapa 2: poderes ---------- */
+
+.pn-modos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.painel .pn-modo {
+    align-items: flex-start;
+    padding: 14px 16px;
+}
+
+.pn-modo input {
+    margin-top: 2px !important;
+}
+
+.pn-modo span,
+.pn-poder span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* O reset.css zera o negrito do <strong> */
+.pn-modo strong,
+.pn-poder strong {
+    font-weight: 600;
+}
+
+.pn-modo small,
+.pn-poder small {
+    color: var(--pn-texto-suave);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.pn-poderes {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    transition: opacity 200ms;
+}
+
+.pn-poderes legend {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pn-texto-suave);
+}
+
+.pn-poderes:disabled {
+    opacity: 0.45;
+}
+
+.painel .pn-poder {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--pn-borda);
+    border-radius: 12px;
+    color: var(--pn-texto);
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 150ms, background 150ms;
+}
+
+.pn-poder input {
+    margin-top: 2px !important;
+}
+
+.pn-poder:has(input:checked) {
+    border-color: var(--pn-laranja);
+    background: var(--pn-laranja-claro);
+}
+
+.pn-poderes:disabled .pn-poder,
+.pn-poderes:disabled input {
+    cursor: not-allowed;
+}
+
+/* ---------- Rodapé com os botões (fica sempre visível) ---------- */
+
+.pn-rodape {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    margin-top: auto;
+    padding: 16px clamp(20px, 3vw, 36px);
+    border-top: 1px solid var(--pn-borda);
+    background: rgba(252, 251, 250, 0.97);
+    backdrop-filter: blur(4px);
+}
+
+.pn-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.pn-aviso {
+    margin: 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.pn-aviso-erro {
+    background: var(--pn-erro-fundo);
+    color: var(--pn-erro);
+}
+
+.pn-aviso-ok {
+    background: var(--pn-ok-fundo);
+    color: var(--pn-ok);
+}
+
+.pn-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 46px;
+    padding: 0 22px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: background 150ms, border-color 150ms, color 150ms;
+}
+
+.pn-botao ion-icon {
+    font-size: 18px;
+}
+
+.pn-botao-principal {
+    border: 0;
+    background: var(--pn-laranja);
+    color: #fff;
+}
+
+.pn-botao-principal:hover:not(:disabled) {
+    background: var(--pn-laranja-escuro);
+}
+
+.pn-botao-principal:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.pn-botao-contorno {
+    border: 1px solid var(--pn-borda);
+    background: #fff;
+    color: var(--pn-texto);
+}
+
+.pn-botao-contorno:hover {
+    border-color: #d3ccc6;
+    background: #f7f5f3;
+}
+
+.pn-botao-leve {
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--pn-texto-suave);
+}
+
+.pn-botao-leve:hover {
+    background: #f1ede9;
+    color: var(--pn-texto);
+}
+
+/* ---------- "Em breve" (Consulta CPF) ---------- */
+
+.painel-compacto {
+    display: grid;
+    place-items: center;
+}
+
+.pn-em-breve {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 420px;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.pn-em-breve-icone {
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: var(--pn-laranja-claro);
+    color: var(--pn-laranja);
+    font-size: 36px;
+}
+
+.pn-em-breve h1 {
+    font-size: 24px;
+}
+
+.pn-em-breve p {
+    margin-bottom: 8px;
+    color: var(--pn-texto-suave);
+    font-size: 17px;
+}
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 1100px) {
+    .pn-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pn-poderes,
+    .pn-modos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .pn-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .pn-col-2 {
+        grid-column: auto;
+    }
+
+    .pn-botoes {
+        width: 100%;
+    }
+
+    .pn-botao {
+        flex: 1 1 auto;
+    }
+}
