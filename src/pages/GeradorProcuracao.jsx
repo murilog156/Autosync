@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import '../styles/painel.css'
 
-import { PODERES } from '../data/poderes.js'
+import { MARCADOR_VALOR, PODERES } from '../data/poderes.js'
+import { centavosDe, formatarMoeda, valorPorExtenso } from '../utils/moeda.js'
 import { procuracaoTeste } from '../data/dadosTeste.js'
 import { formatarTelefone, telefoneCompleto } from '../utils/telefone.js'
 import {
@@ -36,7 +37,12 @@ const veiculoVazio = {
   anoModelo: '',
   cor: '',
 }
-const poderesIniciais = { modo: null, selecionados: [], validade: 'sem', dataValidade: '' }
+const poderesIniciais = { modo: null, selecionados: [], valorVenda: '', validade: 'sem', dataValidade: '' }
+
+// Texto do poder na tela (o valor de venda aparece como um espaço a preencher)
+function textoNaTela(poder) {
+  return poder.texto.replace(MARCADOR_VALOR, 'R$ ____ (valor de venda)')
+}
 
 let proximoId = 1
 function novoProcurador(dados = {}) {
@@ -239,11 +245,24 @@ export default function GeradorProcuracao() {
 
   // ---------- Etapa 2: poderes e validade ----------
 
-  const podeGerar =
-    poderes.modo === 'amplos' || (poderes.modo === 'especificos' && poderes.selecionados.length > 0)
+  const ehAmplos = poderes.modo === 'amplos'
+
+  // Poderes que vão para a procuração. Em "amplos" entram todos, menos os opcionais
+  // (ex.: item 15, causa própria), que só entram se o usuário marcar.
+  const poderesIncluidos = PODERES.filter((p) =>
+    ehAmplos ? !p.opcional || poderes.selecionados.includes(p.id) : poderes.selecionados.includes(p.id),
+  )
+  const precisaValorVenda = poderes.modo !== null && poderesIncluidos.some((p) => p.exigeValor)
+
+  const podeGerar = ehAmplos || (poderes.modo === 'especificos' && poderes.selecionados.length > 0)
 
   function escolherModo(modo) {
-    setPoderes((p) => ({ ...p, modo }))
+    setPoderes((p) => ({
+      ...p,
+      modo,
+      // Ao escolher "amplos", os opcionais (item 15) começam desmarcados
+      selecionados: modo === 'amplos' ? p.selecionados.filter((id) => !PODERES.find((x) => x.id === id)?.opcional) : p.selecionados,
+    }))
     setAviso(null)
   }
 
@@ -254,6 +273,7 @@ export default function GeradorProcuracao() {
         ? p.selecionados.filter((item) => item !== id)
         : [...p.selecionados, id],
     }))
+    definirErro('poderes.valor', null)
     setAviso(null)
   }
 
@@ -277,6 +297,15 @@ export default function GeradorProcuracao() {
   async function gerar() {
     if (!podeGerar || gerando) return
 
+    // Causa própria (item 15) exige o valor de venda do veículo
+    const valorVenda = centavosDe(poderes.valorVenda)
+    if (precisaValorVenda && valorVenda === 0) {
+      definirErro('poderes.valor', '')
+      setAviso({ tipo: 'erro', texto: 'Informe o valor de venda do veículo.' })
+      focarPrimeiroErro()
+      return
+    }
+
     if (poderes.validade === 'com') {
       if (!poderes.dataValidade) {
         definirErro('poderes.data', '')
@@ -296,11 +325,9 @@ export default function GeradorProcuracao() {
       proprietario,
       procuradores,
       veiculo,
-      amplos: poderes.modo === 'amplos',
-      poderes:
-        poderes.modo === 'amplos'
-          ? PODERES
-          : PODERES.filter((p) => poderes.selecionados.includes(p.id)),
+      amplos: ehAmplos,
+      poderes: poderesIncluidos,
+      valorVenda: precisaValorVenda ? valorVenda : null,
       validade: poderes.validade === 'com' ? poderes.dataValidade : null,
     }
 
@@ -635,7 +662,10 @@ export default function GeradorProcuracao() {
                 />
                 <span>
                   <strong>Procuração de amplos poderes</strong>
-                  <small>Inclui todos os {PODERES.length} poderes da lista abaixo.</small>
+                  <small>
+                    Inclui os poderes da lista abaixo.
+                    {PODERES.some((p) => p.opcional) && ' A causa própria é opcional: marque se quiser.'}
+                  </small>
                 </span>
               </label>
               <label className={`pn-modo ${poderes.modo === 'especificos' ? 'ativa' : ''}`}>
@@ -652,25 +682,61 @@ export default function GeradorProcuracao() {
               </label>
             </div>
 
-            <fieldset className="pn-poderes" disabled={poderes.modo !== 'especificos'}>
-              <legend>Poderes específicos</legend>
-              {PODERES.map((poder) => (
-                <label key={poder.id} className="pn-poder">
-                  <input
-                    type="checkbox"
-                    checked={poderes.modo === 'especificos' && poderes.selecionados.includes(poder.id)}
-                    onChange={() => alternarPoder(poder.id)}
-                  />
-                  <span>
-                    <strong>
-                      {poder.id}. {poder.titulo}
-                    </strong>
-                    <small>{poder.texto}</small>
-                  </span>
-                </label>
-              ))}
+            {/* Em "amplos", os poderes fixos aparecem marcados e travados; só os opcionais
+                (item 15) podem ser marcados. Em "específicos", todos ficam livres. */}
+            <fieldset className="pn-poderes" disabled={poderes.modo === null}>
+              <legend>{ehAmplos ? 'Poderes incluídos' : 'Poderes específicos'}</legend>
+              {PODERES.map((poder) => {
+                const travado = ehAmplos && !poder.opcional
+                return (
+                  <label key={poder.id} className="pn-poder">
+                    <input
+                      type="checkbox"
+                      checked={poderesIncluidos.includes(poder)}
+                      disabled={travado}
+                      onChange={() => alternarPoder(poder.id)}
+                    />
+                    <span>
+                      <strong>
+                        {poder.id}. {poder.titulo}
+                        {poder.opcional && <em className="pn-selo">opcional</em>}
+                      </strong>
+                      <small>{textoNaTela(poder)}</small>
+                    </span>
+                  </label>
+                )
+              })}
             </fieldset>
           </section>
+
+          {/* Valor de venda: só aparece (e só é obrigatório) com a causa própria marcada */}
+          {precisaValorVenda && (
+            <section className="pn-secao">
+              <h2>Valor de venda do veículo</h2>
+              <p className="pn-dica">
+                A procuração em causa própria precisa informar o valor de venda do veículo.
+              </p>
+              <div className="pn-grade">
+                <Campo
+                  chave="poderes.valor"
+                  erros={erros}
+                  rotulo="Valor de venda"
+                  obrigatorio
+                  inputMode="numeric"
+                  placeholder="R$ 0,00"
+                  value={poderes.valorVenda}
+                  onChange={(e) => {
+                    setPoderes((p) => ({ ...p, valorVenda: formatarMoeda(e.target.value) }))
+                    definirErro('poderes.valor', null)
+                    setAviso(null)
+                  }}
+                />
+              </div>
+              {centavosDe(poderes.valorVenda) > 0 && (
+                <p className="pn-dica pn-extenso">({valorPorExtenso(centavosDe(poderes.valorVenda))})</p>
+              )}
+            </section>
+          )}
 
           <section className="pn-secao">
             <h2>Validade</h2>

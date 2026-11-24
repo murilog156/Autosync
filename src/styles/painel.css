@@ -442,6 +442,37 @@
     cursor: not-allowed;
 }
 
+/* Em "amplos poderes": itens já incluídos, travados (só o opcional pode ser marcado) */
+.painel .pn-poder:has(input:disabled) {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.pn-poder input:disabled {
+    cursor: not-allowed;
+}
+
+/* Selo "opcional" ao lado do título do poder */
+.pn-selo {
+    margin-left: 8px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--pn-laranja-claro);
+    color: var(--pn-laranja-escuro);
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: 1px;
+}
+
+/* Valor por extenso embaixo do campo "Valor de venda" */
+.pn-extenso {
+    margin-top: -6px;
+    font-style: italic;
+}
+
 /* ---------- Rodapé com os botões (fica sempre visível) ---------- */
 
 .pn-rodape {
