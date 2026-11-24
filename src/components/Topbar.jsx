@@ -27,11 +27,7 @@ export default function Topbar({ menuAberto, onAbrirMenu }) {
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
 
-      {/* Duas logos sobrepostas: ao passar o mouse, a de cima some e mostra a de baixo */}
-      <span className="topbar-logos">
-        <img id="logo1" src="/media/logo1.png" width="300" height="90" alt="AutoSync" />
-        <img id="logo2" src="/media/logo2.png" width="300" height="90" alt="" />
-      </span>
+      <img className="topbar-logo" src="/media/logo.svg" width="330" height="90" alt="AutoSync" />
 
       <div className="topbar-usuario">
         {nome && (

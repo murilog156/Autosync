@@ -81,7 +81,13 @@ export default function Perfil() {
           <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
           Voltar ao painel
         </Link>
-        <img src="/media/logo1.png" alt="AutoSync" className="pf-logo" width="175" height="50" />
+        <img
+          src="/media/logo-transparente-fundo-claro.svg"
+          alt="AutoSync"
+          className="pf-logo"
+          width="160"
+          height="40"
+        />
       </header>
 
       <main className="pf-conteudo">

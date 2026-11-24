@@ -52,11 +52,13 @@ body:has(.landing) {
     color: #f4f1ee;
 }
 
+/* Logo com fundo transparente (SVG), direto sobre o fundo escuro */
 .lp-logo {
+    display: block;
     width: min(420px, 100%);
     height: auto;
-    border-radius: 14px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    /* Proporção original ≈ 420 × 110; achatada 5px → 420 × 105 (escala junto em telas menores) */
+    aspect-ratio: 420 / 105;
 }
 
 .lp-titulo {
@@ -67,11 +69,53 @@ body:has(.landing) {
     line-height: 1.15;
     letter-spacing: -0.01em;
     max-width: 18ch;
-    text-wrap: balance;
 }
 
-.lp-titulo span {
+/* ---------- Efeito máquina de escrever no título ---------- */
+
+.lp-digitado {
+    position: relative;
+    display: block;
+}
+
+/* Frase inteira invisível: reserva o espaço para nada "pular" durante a digitação */
+.lp-digitado-reserva {
+    visibility: hidden;
+}
+
+.lp-digitado-texto {
+    position: absolute;
+    inset: 0;
+}
+
+.lp-titulo .lp-destaque {
     color: var(--lp-laranja);
+}
+
+.lp-cursor {
+    margin-left: 2px;
+    color: var(--lp-laranja);
+    font-weight: 400;
+}
+
+.lp-cursor.piscando {
+    animation: lp-piscar 1s step-end infinite;
+}
+
+@keyframes lp-piscar {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Texto só para leitores de tela */
+.lp-somente-leitor {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 .lp-subtitulo {

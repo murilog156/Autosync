@@ -68,9 +68,11 @@ body:has(.perfil) {
     font-size: 18px;
 }
 
+/* Logo transparente para fundo claro, achatada como a da landing (420 × 105 → 4:1) */
 .pf-logo {
     height: 40px;
     width: auto;
+    aspect-ratio: 4 / 1;
 }
 
 /* ---------- Conteúdo ---------- */

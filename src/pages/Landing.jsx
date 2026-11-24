@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Navigate } from 'react-router'
 import { useAuth } from '../auth/AuthProvider.jsx'
 import CartaoAutenticacao from '../components/CartaoAutenticacao.jsx'
+import TextoDigitado from '../components/TextoDigitado.jsx'
 import '../styles/landing.css'
 
 const recursos = [
@@ -42,10 +43,21 @@ export default function Landing() {
   return (
     <div className="landing">
       <section className="lp-apresentacao">
-        <img className="lp-logo" src="/media/logo2.png" alt="AutoSync" width="420" height="120" />
+        <img
+          className="lp-logo"
+          src="/media/logo-transparente.svg"
+          alt="AutoSync"
+          width="420"
+          height="105"
+        />
 
         <h1 className="lp-titulo">
-          Documentação veicular <span>pronta para imprimir</span>.
+          <TextoDigitado
+            partes={[
+              { texto: 'Gerenciamento e Documentação ' },
+              { texto: 'em um só lugar', destaque: true },
+            ]}
+          />
         </h1>
         <p className="lp-subtitulo">Feito para despachantes e revendas de veículos.</p>
 

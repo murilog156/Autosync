@@ -724,40 +724,15 @@ body {
     font-size: 26px;
 }
 
-.topbar-logos {
+/* Selo escuro (SVG). Proporção original 2576 × 736 (3,5:1), achatada como
+   a logo da landing (−5px a cada 110px) → 11:3. A largura segue a altura. */
+.topbar-logo {
 
-    position: relative;
     flex: none;
     display: block;
-    line-height: 0;
-}
-
-#logo1,
-#logo2 {
-
     width: auto;
     height: 90px;
-}
-
-#logo1 {
-
-    position: relative;
-    z-index: 1;
-    transition: opacity 300ms;
-}
-
-#logo1:hover {
-
-    cursor: pointer;
-    opacity: 0;
-}
-
-#logo2 {
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+    aspect-ratio: 11 / 3;
 }
 
 .topbar-usuario {
@@ -933,15 +908,9 @@ body {
         display: grid;
     }
 
-    #logo1,
-    #logo2 {
+    .topbar-logo {
 
         height: 48px;
-    }
-
-    #logo1:hover {
-
-        opacity: 1;
     }
 
     .topbar-usuario {
@@ -1098,8 +1067,7 @@ body {
         display: none;
     }
 
-    #logo1,
-    #logo2 {
+    .topbar-logo {
 
         height: 42px;
     }
@@ -1118,8 +1086,7 @@ body {
         gap: 6px;
     }
 
-    #logo1,
-    #logo2 {
+    .topbar-logo {
 
         height: 36px;
     }
