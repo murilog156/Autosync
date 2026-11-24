@@ -27,7 +27,7 @@ export default function Topbar({ menuAberto, onAbrirMenu }) {
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
 
-      <img className="topbar-logo" src="/media/logo.svg" width="330" height="90" alt="AutoSync" />
+      <img className="topbar-logo" src="/media/logo-fundo-branco.svg" width="330" height="90" alt="AutoSync" />
 
       <div className="topbar-usuario">
         {nome && (
